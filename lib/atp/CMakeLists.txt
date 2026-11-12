@@ -1,13 +1,14 @@
 # ATP library CMakeLists.txt - 简化版本，不创建目标
 
-# 检查必需文件
-if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include)
-    message(WARNING "ATP include directory not found: ${CMAKE_CURRENT_SOURCE_DIR}/include")
-endif()
-
-if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/lib/libatpquantapi.so)
-    message(FATAL_ERROR "ATP library not found: ${CMAKE_CURRENT_SOURCE_DIR}/lib/libatpquantapi.so")
-endif()
+# SDK files are obtained separately from the provider and ignored by Git.
+foreach(required_file IN ITEMS "include/atp_quant_api.h" "lib/libatpquantapi.so")
+    if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/${required_file}")
+        message(FATAL_ERROR
+            "ATP SDK is not bundled with this repository. "
+            "Obtain it from your provider and follow lib/atp/README.md. "
+            "Missing: ${CMAKE_CURRENT_LIST_DIR}/${required_file}")
+    endif()
+endforeach()
 
 # 检查ATP特有的依赖文件
 if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/lib/rsa_public_key.pem)

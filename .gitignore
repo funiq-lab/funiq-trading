@@ -180,3 +180,29 @@ cython_debug/
 **/.DS_Store
 
 .spec-workflow
+
+# Provider SDKs: obtain separately; never redistribute in this repository.
+/lib/atp/include/
+/lib/atp/lib/
+/lib/ksqmd/include/
+/lib/ksqmd/gcc_high_version_so/
+/lib/ksqmd/*.so
+
+# Local credentials, runtime data and provider authorization material.
+/quote_config.json
+/trade_config.json
+/strategy_config.json
+/system_config.json
+/api_config_ex.xml
+/atp_quant_api.xml
+/src/quote/ksqmd_quote_parser/config/api_config_ex.xml
+/src/trade/atp_trade_handler/config/atp_quant_api.xml
+/data/
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+*.lic
+*.p12
+*.pfx

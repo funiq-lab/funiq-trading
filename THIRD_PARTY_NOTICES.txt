@@ -7,6 +7,8 @@ Bundled third-party components include Eigen, eventpp, spdlog/fmt, dotenv,
 BS_thread_pool, INI, croncpp and tinyxml2. Retain their embedded notices and
 review their complete upstream license terms before distributing a release.
 
-ATP / Archforce and KSQMD SDK materials are third-party vendor components.
-ATP headers contain a restriction on redistribution. Public availability in
-another project does not resolve that restriction or grant an MIT sublicense.
+ATP / Archforce and KSQMD SDK headers, binaries, keys and authorization
+materials are not distributed in this repository. Obtain the required SDK
+files and applicable permissions directly from the corresponding provider.
+See lib/atp/README.md and lib/ksqmd/README.md for local installation layouts.
+The project MIT license does not grant rights to those separately obtained SDKs.

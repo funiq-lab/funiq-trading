@@ -1,13 +1,14 @@
 # KSQMD library CMakeLists.txt - 简化版本，不创建目标
 
-# 检查必需文件
-if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include)
-    message(WARNING "KSQMD include directory not found: ${CMAKE_CURRENT_SOURCE_DIR}/include")
-endif()
-
-if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/libksHsUdp.so)
-    message(FATAL_ERROR "KSQMD library not found: ${CMAKE_CURRENT_SOURCE_DIR}/libksHsUdp.so")
-endif()
+# SDK files are obtained separately from the provider and ignored by Git.
+foreach(required_file IN ITEMS "include/KsHSInterfaceEx.h" "libksHsUdp.so")
+    if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/${required_file}")
+        message(FATAL_ERROR
+            "KSQMD SDK is not bundled with this repository. "
+            "Obtain it from your provider and follow lib/ksqmd/README.md. "
+            "Missing: ${CMAKE_CURRENT_LIST_DIR}/${required_file}")
+    endif()
+endforeach()
 
 # 打印信息，但不创建任何目标
 message(STATUS "KSQMD library found:")

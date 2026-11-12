@@ -2,6 +2,22 @@
 
 推荐先用 Docker 编译和运行，再根据需要修改代码。这样不用在自己的电脑上逐个安装编译工具和依赖，环境也更容易保持一致。
 
+## 准备服务商 SDK
+
+完整系统依赖 ATP 交易 SDK 和 KSQMD 行情 SDK。仓库不附带服务商的头文件、动态库、公钥或授权文件；编译前请向对应服务商获取与现有适配代码兼容的 Linux x86_64 版本。
+
+文件清单与放置路径分别见 [ATP SDK 说明](../lib/atp/README.md)和 [KSQMD SDK 说明](../lib/ksqmd/README.md)。这些本地文件已由 Git 忽略，不要强制加入提交。未准备 SDK 时，完整系统构建会提示缺少依赖。
+
+策略示例的独立测试不依赖这些服务商 SDK：
+
+```bash
+cmake -S tests -B build/example-tests -DCMAKE_BUILD_TYPE=Debug
+cmake --build build/example-tests
+ctest --test-dir build/example-tests --output-on-failure
+```
+
+该测试需要 C++17 编译器、CMake、nlohmann_json 及项目公共头文件所依赖的 SQLiteCpp 头文件。
+
 ## 使用 Docker 编译
 
 先安装并启动 Docker，再下载项目：
