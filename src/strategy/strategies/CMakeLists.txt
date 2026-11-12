@@ -1,0 +1,1 @@
+add_subdirectory(stop_profit_loss_strategy)

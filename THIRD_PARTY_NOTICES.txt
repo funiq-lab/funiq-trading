@@ -1,0 +1,12 @@
+The MIT license in LICENSE applies to the original funiq-trading code.
+Third-party source code, SDK headers, binaries and accompanying materials
+retain their original copyright notices and licenses. They are not relicensed
+under the project MIT license.
+
+Bundled third-party components include Eigen, eventpp, spdlog/fmt, dotenv,
+BS_thread_pool, INI, croncpp and tinyxml2. Retain their embedded notices and
+review their complete upstream license terms before distributing a release.
+
+ATP / Archforce and KSQMD SDK materials are third-party vendor components.
+ATP headers contain a restriction on redistribution. Public availability in
+another project does not resolve that restriction or grant an MIT sublicense.

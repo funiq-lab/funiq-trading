@@ -1,0 +1,5 @@
+# Synthetic data for format demonstration only.
+security_code,security_name,security_type,market,timestamp,update_time,bid_price,bid_qty,bid_num_orders,bid_show_orders,ask_price,ask_qty,ask_num_orders,ask_show_orders,orders,channel_no,sequence
+000001,DEMO,stock,szse,1703001600000000,93000000,10.0,0,0,0,10.0,0,0,0,0,0,1
+000001,DEMO,stock,szse,1703001601000000,93001000,10.29,0,0,0,10.29,0,0,0,0,0,2
+000001,DEMO,stock,szse,1703001602000000,93002000,10.3,0,0,0,10.3,0,0,0,0,0,3

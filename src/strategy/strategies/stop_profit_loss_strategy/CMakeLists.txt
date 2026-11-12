@@ -1,0 +1,4 @@
+add_library(ft_stop_profit_loss_strategy INTERFACE)
+target_include_directories(ft_stop_profit_loss_strategy INTERFACE ${CMAKE_SOURCE_DIR}/include)
+target_link_libraries(ft_stop_profit_loss_strategy INTERFACE ft_base_strategy nlohmann_json::nlohmann_json)
+target_compile_features(ft_stop_profit_loss_strategy INTERFACE cxx_std_17)

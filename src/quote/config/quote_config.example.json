@@ -1,0 +1,50 @@
+{
+  "parsers": [
+    {
+      "id": "mock_parser_test",
+      "active": true,
+      "module": "ft_ksqmd_quote_parser",
+      "config": {
+        "callback_mode": false,
+        "markets": ["sse", "szse"],
+        "data_types": ["index", "depth", "entrust", "trade"],
+        "extended_config_file": "./api_config_ex.xml",
+        "securities": [
+          {
+            "code": "000001"
+          },
+          {
+            "code": "000002"
+          }
+        ],
+        "performance": {
+          "enabled": true,
+          "report_interval_ms": 5000,
+          "enable_latency_stats": true
+        },
+        "mock": {
+          "enabled": true,
+          "mock_data_file": "./test/data/sample_market_data",
+          "loop_replay": true
+        }
+      },
+      "data": [
+        {
+          "type": "shared_memory",
+          "active": false,
+          "config": {
+            "name": "quote_shm_mock"
+          }
+        },
+        {
+          "type": "file",
+          "active": true,
+          "config": {
+            "path": "./test/data/sample_market_data",
+            "format": "binary"
+          }
+        }
+      ]
+    }
+  ]
+}

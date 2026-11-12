@@ -1,0 +1,39 @@
+{
+  "parsers": [
+    {
+      "id": "trade_test",
+      "active": true,
+      "module": "ft_atp_trade_handler",
+      "config": {
+        "callback_mode": false,
+        "extended_config_file": "./atp_quant_api.xml",
+        "login_mode": 2,
+        "accounts": [
+          {
+            "login_id": "DEMO_ACCOUNT",
+            "cust_id": "DEMO_CUSTOMER",
+            "fund_account_id": "DEMO_ACCOUNT",
+            "account_id_sz": "DEMO_SZ",
+            "account_id_sh": "DEMO_SH",
+            "branch_id": "0000",
+            "password": "CHANGE_ME"
+          }
+        ],
+        "performance": {
+          "enabled": true,
+          "report_interval_ms": 5000,
+          "enable_latency_stats": true
+        }
+      },
+      "data": [
+        {
+          "type": "shared_memory",
+          "active": false,
+          "config": {
+            "name": "trade_shm_mock"
+          }
+        }
+      ]
+    }
+  ]
+}

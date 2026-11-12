@@ -1,0 +1,8 @@
+{
+  "trading_time": [
+    [9, 30, 11, 30],
+    [13, 0, 15, 0]
+  ],
+  "holiday": [],
+  "trading_weekdays": [1, 2, 3, 4, 5]
+}

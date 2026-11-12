@@ -1,0 +1,7 @@
+# EntrustData (逐笔委托数据) CSV模板
+# 字段说明：完全对应quote_types.h中的EntrustData结构
+security_code,security_name,security_type,market,timestamp,transact_time,order_type,side,bs_flag,order_no,order_index,price,qty,balance,channel_no,biz_index,appl_seq_num,sequence
+600000,浦发银行,stock,sse,1703001600000000,93000000,A,B,B,20231201001,1,10.99,100000,100000,1,1001,10001,1
+600000,浦发银行,stock,sse,1703001600000000,93000100,A,S,S,20231201002,2,11.00,200000,200000,1,1002,10002,2
+000001,平安银行,stock,szse,1703001600000000,93000200,A,B,B,20231201003,3,16.49,150000,150000,1,1003,10003,3
+000001,平安银行,stock,szse,1703001600000000,93000300,A,S,S,20231201004,4,16.50,180000,180000,1,1004,10004,4 

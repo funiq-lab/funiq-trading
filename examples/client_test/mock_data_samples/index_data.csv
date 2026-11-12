@@ -1,0 +1,5 @@
+# IndexData (指数行情数据) CSV模板
+# 字段说明：完全对应quote_types.h中的IndexData结构
+security_code,security_name,market,timestamp,update_time,trading_phase,last_index,pre_close_index,open_index,high_index,low_index,close_index,total_volume,total_value,num_trades,sequence
+000001,上证指数,sse,1703001600000000,93000000,3,3000.15,3000.00,2995.50,3005.80,2990.20,3000.15,150000000,450000000000,1500000,1
+399001,深证成指,szse,1703001600000000,93000000,3,10500.80,10500.00,10480.20,10520.50,10475.10,10500.80,80000000,320000000000,800000,1 

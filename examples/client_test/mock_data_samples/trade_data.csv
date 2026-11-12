@@ -1,0 +1,7 @@
+# TradeData (逐笔成交数据) CSV模板
+# 字段说明：完全对应quote_types.h中的TradeData结构
+security_code,security_name,security_type,market,timestamp,transact_time,trade_id,trade_index,price,qty,value,bid_order_no,ask_order_no,bid_appl_seq_num,ask_appl_seq_num,exec_type,trade_flag,channel_no,biz_index,appl_seq_num,sequence
+600000,浦发银行,stock,sse,1703001600000000,93000000,30001,1,11.00,50000,550000,20231201001,20231201002,10001,10002,F,B,1,2001,20001,1
+600000,浦发银行,stock,sse,1703001600000000,93000100,30002,2,10.99,30000,329700,20231201003,20231201004,10003,10004,F,S,1,2002,20002,2
+000001,平安银行,stock,szse,1703001600000000,93000200,30003,3,16.50,40000,660000,20231201005,20231201006,10005,10006,F,B,1,2003,20003,3
+000001,平安银行,stock,szse,1703001600000000,93000300,30004,4,16.49,25000,412250,20231201007,20231201008,10007,10008,F,S,1,2004,20004,4 

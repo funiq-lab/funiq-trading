@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <meta version="1.0">
+    <!--鉴权服务器信息。可配置多条，每一条以分号结尾。如果当前不能鉴权会自动切换到另一个进行鉴权-->
+    <Auth>
+    192.0.2.1:8281;
+    192.0.2.2:8281;
+    </Auth>
+    <!--消息类型与组播的映射关系，注意需要与沪深和订单簿reset脚本中配置的数据组播地址一致，注意同一类型数据的主备两路组播地址需要保持一致-->
+    <Multicast >
+      abcdef=239.2.1.208:8180;
+      ABCDEF=239.2.1.209:8180;
+    </Multicast>
+  </meta>
+  <config id="1" >
+    <!--只配置1条-->
+    <!--用户名 + 密码 + 网口（网口名称或者网口对应ip）-->
+    <AuthInfo user="CHANGE_ME_QUOTE_AUTH" passwd="CHANGE_ME_QUOTE_AUTH" nic="192.0.2.3" />
+
+    <Cache mode="advance">
+      <!--指定在特定的网口上收指定的数据类型-->
+      <RecvThreads>
+        <!--可配置多条-->
+        <!--网口（填写网口名称或者网口对应ip，支持team口，注意使用team口时接收端必须使用root权限或者使用root用户执行chmod u+s /usr/bin/teamdctl） + cpu id + 数据类型-->
+        <!--此处填写了什么数据类型，就会根据Multicast中该数据类型对应的组播地址，将该网口加入该组播组，数据类型也可直接填写该类型对应的组播地址-->
+        <item onNic="p1p1"  cpuId="8" types="abcdef" />
+        <item onNic="p1p2"  cpuId="14" types="ABCDEF" />
+      </RecvThreads>
+
+      <!--队列，每一组的数据按管道顺序流式传递给用户线程-->
+      <QueueGroup>
+        <!--可配置多条-->
+        <!--id（通过数据回调接口函数传回，方便标识）+ 数据类型  + cpu id + 内存块大小（2M/per）-->
+        <!--注意在同一个队列里面，不能同时配置来自不同网口的数据类型（后期将支持）-->
+	<item id="2" types="ab"        cpuId="10" blockSize="1024" />
+        <item id="3" types="cdef"      cpuId="12" blockSize="1024" />
+	<item id="4" types="CD"        cpuId="16" blockSize="1024" />
+        <item id="5" types="ABEF"      cpuId="18" blockSize="1024" />
+      </QueueGroup>
+    </Cache>
+
+    <!--可选项配置-->
+    <option>
+      <!--是否自动去重（为1开启去重），默认为1，双活状态下如不去重，将落地重复的双份数据。单活状态下配置为0，可以免于去重判断-->
+      <autoDeduplicate>1</autoDeduplicate>
+    </option>
+  </config>
+</configuration>
