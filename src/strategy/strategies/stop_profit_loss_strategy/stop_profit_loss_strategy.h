@@ -10,7 +10,11 @@
 
 NS_FT_BEGIN
 
-// Teaching example: exits configured paper positions. Never sends broker orders.
+/**
+ * 仅用于展示策略的调用方式，不具备业务含义。
+ * 演示策略初始化、启停、行情回调、配置和状态查询；不发送真实订单。
+ * 示例名称、参数和模拟信号均不代表交易规则或投资建议。
+ */
 class StopProfitLossStrategy final : public BaseStrategy {
 public:
     int init(const char* config) override {

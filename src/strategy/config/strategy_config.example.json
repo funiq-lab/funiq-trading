@@ -3,7 +3,7 @@
     {
       "id": "paper_stop_001",
       "name": "模拟止盈止损示例",
-      "description": "仅模拟配置中的持仓退出，不发送真实订单",
+      "description": "仅用于展示策略的调用方式，不具备业务含义，不发送真实订单",
       "module": "StopProfitLossStrategy",
       "config": {
         "profit_threshold": 3.0,
