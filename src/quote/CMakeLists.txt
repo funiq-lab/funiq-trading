@@ -63,7 +63,9 @@ set_target_properties(ft_base_quote_parser PROPERTIES
 )
 
 # Add ksqmd quote parser as subdirectory
-add_subdirectory(ksqmd_quote_parser)
+if(BUILD_VENDOR_ADAPTERS)
+    add_subdirectory(ksqmd_quote_parser)
+endif()
 
 # =============================================================================
 # Quote 库
@@ -88,7 +90,7 @@ target_include_directories(ft_quote PUBLIC
 
 target_link_libraries(ft_quote PUBLIC
     ft_base_quote_parser
-    ft_ksqmd_quote_parser
+    $<$<BOOL:${BUILD_VENDOR_ADAPTERS}>:ft_ksqmd_quote_parser>
     Boost::system
     Threads::Threads
     nlohmann_json::nlohmann_json
@@ -123,7 +125,7 @@ if(BUILD_PRODUCTION)
     # 生产模式：为了避免 PIC 问题，使用动态链接系统库
     target_link_libraries(quote_service PRIVATE
         ft_base_quote_parser
-        ft_ksqmd_quote_parser
+        $<$<BOOL:${BUILD_VENDOR_ADAPTERS}>:ft_ksqmd_quote_parser>
         ft_logger
         ft_data
         ft_utils
@@ -142,7 +144,7 @@ else()
     # 开发模式：正常链接
     target_link_libraries(quote_service PUBLIC
         ft_base_quote_parser
-        ft_ksqmd_quote_parser
+        $<$<BOOL:${BUILD_VENDOR_ADAPTERS}>:ft_ksqmd_quote_parser>
         Boost::system
         Threads::Threads
         nlohmann_json::nlohmann_json

@@ -1,0 +1,388 @@
+{
+  "health": {
+    "code": "0",
+    "data": {
+      "overall_status": "healthy",
+      "services": {
+        "quote": {
+          "connected": true,
+          "healthy": true,
+          "running": true
+        },
+        "strategy": {
+          "healthy": true,
+          "initialized": true,
+          "running": true
+        },
+        "trade": {
+          "connected": true,
+          "healthy": true,
+          "running": true
+        }
+      },
+      "timestamp": 1794886605
+    },
+    "message": "Success"
+  },
+  "status": {
+    "code": "0",
+    "data": {
+      "services": {
+        "quote": {
+          "connected": true,
+          "last_error": "",
+          "parser_id": "mock_quotes",
+          "running": true
+        },
+        "strategy": {
+          "active_instances": 1,
+          "initialized": true,
+          "last_error": "",
+          "running": true
+        },
+        "trade": {
+          "connected": true,
+          "interface_id": "mock_trading",
+          "last_error": "",
+          "logged_in_accounts": 1,
+          "running": true,
+          "total_accounts": 1
+        }
+      },
+      "timestamp": 1794886605
+    },
+    "message": "Success"
+  },
+  "sse": {
+    "code": "0",
+    "data": {
+      "ask_price": [
+        10.91,
+        10.92,
+        10.93,
+        10.94,
+        10.950000000000001,
+        10.96,
+        10.97,
+        10.98,
+        10.99,
+        11
+      ],
+      "ask_qty": [
+        1374921,
+        100390,
+        150390,
+        200390,
+        250390,
+        300390,
+        350390,
+        400390,
+        450390,
+        500390
+      ],
+      "avg_price": 10.9,
+      "bid_price": [
+        10.89,
+        10.88,
+        10.870000000000001,
+        10.860000000000001,
+        10.85,
+        10.84,
+        10.83,
+        10.82,
+        10.81,
+        10.8
+      ],
+      "bid_qty": [
+        1377446,
+        100390,
+        150390,
+        200390,
+        250390,
+        300390,
+        350390,
+        400390,
+        450390,
+        500390
+      ],
+      "channel_no": 0,
+      "close_price": 10.9,
+      "high_price": 10.9,
+      "instrument_status": "0",
+      "iopv": 0,
+      "last_price": 10.9,
+      "low_price": 10.9,
+      "lower_limit_price": 9,
+      "market": 1,
+      "num_trades": 3900,
+      "open_price": 9.95,
+      "pre_close_price": 10,
+      "pre_iopv": 0,
+      "reference_price": 0,
+      "security_code": "600000",
+      "security_name": "浦发银行",
+      "sequence": 390,
+      "timestamp": 1794886605586456,
+      "total_ask_number": 40,
+      "total_ask_qty": 195000,
+      "total_bid_number": 40,
+      "total_bid_qty": 195000,
+      "total_position": 0,
+      "total_value": 4251000,
+      "total_volume": 390000,
+      "trading_phase": 3,
+      "update_time": 390000,
+      "upper_limit_price": 11,
+      "weighted_avg_ask_price": 10.91,
+      "weighted_avg_bid_price": 10.89
+    },
+    "message": "Success"
+  },
+  "szse": {
+    "code": "0",
+    "data": {
+      "ask_price": [
+        15.41,
+        15.42,
+        15.43,
+        15.44,
+        15.450000000000001,
+        15.46,
+        15.47,
+        15.48,
+        15.49,
+        15.5
+      ],
+      "ask_qty": [
+        973419,
+        160390,
+        240390,
+        320390,
+        400390,
+        480390,
+        560390,
+        640390,
+        720390,
+        800390
+      ],
+      "avg_price": 15.4,
+      "bid_price": [
+        15.39,
+        15.38,
+        15.370000000000001,
+        15.360000000000001,
+        15.35,
+        15.34,
+        15.33,
+        15.32,
+        15.31,
+        15.3
+      ],
+      "bid_qty": [
+        974684,
+        160390,
+        240390,
+        320390,
+        400390,
+        480390,
+        560390,
+        640390,
+        720390,
+        800390
+      ],
+      "channel_no": 3,
+      "close_price": 15.4,
+      "high_price": 15.4,
+      "instrument_status": "",
+      "iopv": 0,
+      "last_price": 15.4,
+      "low_price": 15.4,
+      "lower_limit_price": 13.5,
+      "market": 2,
+      "num_trades": 3120,
+      "open_price": 14.95,
+      "pre_close_price": 15,
+      "pre_iopv": 0,
+      "reference_price": 0,
+      "security_code": "000001",
+      "security_name": "平安银行",
+      "sequence": 390,
+      "timestamp": 1794886605586465,
+      "total_ask_number": 30,
+      "total_ask_qty": 156000,
+      "total_bid_number": 30,
+      "total_bid_qty": 156000,
+      "total_position": 0,
+      "total_value": 4804800,
+      "total_volume": 312000,
+      "trading_phase": 3,
+      "update_time": 390000,
+      "upper_limit_price": 16.5,
+      "weighted_avg_ask_price": 15.41,
+      "weighted_avg_bid_price": 15.39
+    },
+    "message": "Success"
+  },
+  "orders": {
+    "code": "0",
+    "data": {
+      "login_id": "MOCK_DEMO",
+      "orders": [
+        {
+          "avg_price": 15,
+          "batch_id": 0,
+          "branch_id": "0000",
+          "business_type": 0,
+          "cum_amt": 15000,
+          "cum_qty": 1000,
+          "cust_id": "MOCK_CUSTOMER",
+          "exchange_order_id": "",
+          "fund_account_id": "MOCK_FUND",
+          "leaves_qty": 0,
+          "market": 2,
+          "opu_id": 0,
+          "order_id": 100001,
+          "order_time": 1794886540582,
+          "order_type": 1,
+          "price": 20,
+          "qty": 1000,
+          "request_id": 46,
+          "security_code": "000001",
+          "security_name": "",
+          "side": 66,
+          "sign": 0,
+          "status": 3,
+          "status_msg": "MOCK filled at fixed reference price",
+          "timestamp": 1794886540582,
+          "update_time": 1794886540582
+        },
+        {
+          "avg_price": 0,
+          "batch_id": 0,
+          "branch_id": "0000",
+          "business_type": 0,
+          "cum_amt": 0,
+          "cum_qty": 0,
+          "cust_id": "MOCK_CUSTOMER",
+          "exchange_order_id": "",
+          "fund_account_id": "MOCK_FUND",
+          "leaves_qty": 0,
+          "market": 2,
+          "opu_id": 0,
+          "order_id": 100002,
+          "order_time": 1794886540584,
+          "order_type": 1,
+          "price": 1,
+          "qty": 100,
+          "request_id": 46,
+          "security_code": "000001",
+          "security_name": "",
+          "side": 66,
+          "sign": 0,
+          "status": 4,
+          "status_msg": "MOCK cancelled",
+          "timestamp": 1794886540584,
+          "update_time": 1794886540590
+        }
+      ],
+      "total_count": 2
+    },
+    "message": "Success"
+  },
+  "trades": {
+    "code": "0",
+    "data": {
+      "login_id": "MOCK_DEMO",
+      "total_count": 1,
+      "trades": [
+        {
+          "batch_id": 0,
+          "branch_id": "0000",
+          "business_type": 0,
+          "currency": "CNY",
+          "cust_id": "MOCK_CUSTOMER",
+          "exchange_order_id": "",
+          "fee": 0,
+          "fund_account_id": "MOCK_FUND",
+          "market": 2,
+          "order_id": 100001,
+          "order_type": 1,
+          "price": 15,
+          "qty": 1000,
+          "request_id": 45,
+          "security_code": "000001",
+          "security_name": "",
+          "side": 66,
+          "timestamp": 1794886540582,
+          "trade_id": "MOCK-100001",
+          "trade_time": 1794886540582,
+          "value": 15000
+        }
+      ]
+    },
+    "message": "Success"
+  },
+  "positions": {
+    "code": "0",
+    "data": {
+      "login_id": "MOCK_DEMO",
+      "positions": [
+        {
+          "available_qty": 1000,
+          "branch_id": "0000",
+          "cost_price": 15,
+          "cust_id": "MOCK_CUSTOMER",
+          "frozen_qty": 0,
+          "fund_account_id": "MOCK_FUND",
+          "market": 2,
+          "market_price": 15,
+          "market_value": 15000,
+          "profit_loss": 0,
+          "profit_loss_ratio": 0,
+          "request_id": 47,
+          "security_code": "000001",
+          "security_name": "",
+          "security_type": 0,
+          "timestamp": 1794886540582,
+          "today_buy_qty": 1000,
+          "today_sell_qty": 0,
+          "total_qty": 1000,
+          "update_time": 1794886540582
+        }
+      ],
+      "total_count": 1
+    },
+    "message": "Success"
+  },
+  "funds": {
+    "code": "0",
+    "data": {
+      "funds": [
+        {
+          "available_cash": 985000,
+          "branch_id": "0000",
+          "buying_power": 985000,
+          "cash_balance": 985000,
+          "currency": "CNY",
+          "current_account_id": "MOCK_SZ",
+          "current_market": 2,
+          "cust_id": "MOCK_CUSTOMER",
+          "frozen_cash": 0,
+          "fund_account_id": "MOCK_FUND",
+          "market_value": 15000,
+          "profit_loss": 0,
+          "profit_loss_ratio": 0,
+          "request_id": 48,
+          "timestamp": 1794886605590,
+          "total_asset": 1000000,
+          "update_time": 1794886605590,
+          "withdrawal_cash": 0
+        }
+      ],
+      "login_id": "MOCK_DEMO",
+      "total_count": 1
+    },
+    "message": "Success"
+  },
+  "captured_at": "2026-11-17T03:36:45.592031+00:00"
+}

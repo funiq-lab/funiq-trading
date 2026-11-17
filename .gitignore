@@ -206,3 +206,6 @@ cython_debug/
 *.lic
 *.p12
 *.pfx
+
+# Local visual review captures (documentation screenshots are tracked separately).
+.impeccable/review/

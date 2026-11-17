@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+"""Local read-only HTTP client for the Funiq Trading mock example."""
+import argparse
+from concurrent.futures import ThreadPoolExecutor
+import datetime as dt
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import json
+from pathlib import Path
+import urllib.error
+import urllib.request
+
+ROUTES = {
+    'health': '/system/health', 'status': '/system/status',
+    'sse': '/quote/depth?security_code=600000',
+    'szse': '/quote/depth?security_code=000001',
+    'orders': '/trade/query/orders?login_id=MOCK_DEMO&market=2',
+    'trades': '/trade/query/trades?login_id=MOCK_DEMO&market=2',
+    'positions': '/trade/query/positions?login_id=MOCK_DEMO&market=2',
+    'funds': '/trade/query/funds?login_id=MOCK_DEMO&market=2',
+}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--core', default='http://127.0.0.1:18080')
+    parser.add_argument('--port', type=int, default=18081)
+    args = parser.parse_args()
+    base = args.core.rstrip('/')
+
+    def read(item):
+        key, path = item
+        req = urllib.request.Request(base + path, headers={'Accept': 'application/json'})
+        try:
+            with urllib.request.urlopen(req, timeout=5) as response:
+                return key, json.load(response)
+        except urllib.error.HTTPError as exc:
+            with exc:
+                return key, json.load(exc)
+
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path == '/snapshot':
+                try:
+                    with ThreadPoolExecutor(max_workers=4) as pool:
+                        payload = dict(pool.map(read, ROUTES.items()))
+                    payload['captured_at'] = dt.datetime.now(dt.timezone.utc).isoformat()
+                    body = json.dumps(payload).encode()
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                except (OSError, ValueError) as exc:
+                    body = json.dumps({'error': f'Core unavailable: {exc}'}).encode()
+                    self.send_response(502)
+                    self.send_header('Content-Type', 'application/json')
+            elif self.path in ('/', '/viewer.html'):
+                body = Path(__file__).with_name('viewer.html').read_bytes()
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+            else:
+                self.send_error(404)
+                return
+            self.send_header('Cache-Control', 'no-store')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def log_message(self, *_):
+            pass
+
+    print(f'Mock viewer: http://127.0.0.1:{args.port} (read-only; core {base})', flush=True)
+    ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
+
+
+if __name__ == '__main__':
+    main()

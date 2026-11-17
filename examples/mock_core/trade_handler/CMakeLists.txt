@@ -1,0 +1,3 @@
+add_library(ft_mock_trade_handler SHARED mock_trade_handler.cpp)
+target_link_libraries(ft_mock_trade_handler PRIVATE ft_base_trade_handler)
+setup_target_compile_options(ft_mock_trade_handler)

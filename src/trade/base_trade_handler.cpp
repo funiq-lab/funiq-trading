@@ -1771,6 +1771,7 @@ void BaseTradeHandler::on_account_query_result(const AccountData &data, const ch
             {
                 auto &accumulated_data = _account_query_accumulators[data.request_id];
                 _account_query_sync_mgr.set_success(data.request_id, accumulated_data);
+                _account_query_accumulators.erase(data.request_id);
             }
         }
         else

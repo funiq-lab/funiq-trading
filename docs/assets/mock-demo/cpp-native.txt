@@ -1,0 +1,18 @@
+[Logger] Using external logger state
+[Logger] Using external logger state
+Funiq Trading | Direct C++ calls
+Objects: ft::QuoteService + ft::TradeService
+Process-local mock account.
+Quote plugin: mock_quotes | running=1
+Trade plugin: mock_trading | running=1
+
+C++ quote: symbol=000001 last=15.08 sequence=8
+C++ quote: symbol=000001 last=15.03 sequence=203
+C++ quote: symbol=000001 last=15.08 sequence=408
+
+C++ buy: order=100001 shares=1000
+C++ cancel: order=100002 released 100.00 CNY
+Cash=985000.00 CNY, position value=15000.00 CNY
+PASS: direct C++ quotes, orders, cancellation and clean shutdown
+[Logger] Reset to internal logger state
+[Logger] Reset to internal logger state

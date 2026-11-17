@@ -1,0 +1,3 @@
+add_executable(cpp_native_example main.cpp)
+target_link_libraries(cpp_native_example PRIVATE ft_quote ft_trade)
+setup_target_compile_options(cpp_native_example)

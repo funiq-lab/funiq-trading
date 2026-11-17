@@ -78,6 +78,10 @@ setup_target_compile_options(ft_logger)
 set_target_properties(ft_logger PROPERTIES
     OUTPUT_NAME "ft_logger"
     POSITION_INDEPENDENT_CODE ON
+    # Each library owns its logger state; plugins share it through set_logger_state.
+    # Exporting static archive symbols can bind several destructors to one state.
+    CXX_VISIBILITY_PRESET hidden
+    VISIBILITY_INLINES_HIDDEN ON
 )
 
 message(STATUS "=== Logger配置完成 ===")

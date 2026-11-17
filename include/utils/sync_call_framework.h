@@ -10,6 +10,7 @@
 #include <memory>
 #include <cstring>
 #include <vector>
+#include <deque>
 
 NS_FT_BEGIN
 
@@ -60,18 +61,41 @@ class SyncCallManager {
 private:
     std::unordered_map<int64_t, std::promise<CompleteResponse<ResponseType>>> promises_;
     std::mutex mutex_;
+    // Plugins may respond inside send/query, before the caller creates its future.
+    // Bound the cache because asynchronous callers never request a future.
+    std::unordered_map<int64_t, CompleteResponse<ResponseType>> early_responses_;
+    std::deque<int64_t> early_order_;
+    void remember_early(int64_t id, CompleteResponse<ResponseType> response) {
+        if (early_responses_.count(id)) return;
+        early_responses_.emplace(id, std::move(response));
+        early_order_.push_back(id);
+        if (early_order_.size() > 256) {
+            early_responses_.erase(early_order_.front());
+            early_order_.pop_front();
+        }
+    }
 
 public:
     std::future<CompleteResponse<ResponseType>> create_future(int64_t request_id) {
         std::lock_guard<std::mutex> lock(mutex_);
         auto& promise = promises_[request_id];
-        return promise.get_future();
+        auto future = promise.get_future();
+        auto early = early_responses_.find(request_id);
+        if (early != early_responses_.end()) {
+            promise.set_value(std::move(early->second));
+            early_responses_.erase(early);
+        }
+        return future;
     }
     
     // 设置成功结果
     void set_success(int64_t request_id, const ResponseType& result) {
         std::lock_guard<std::mutex> lock(mutex_);
         auto it = promises_.find(request_id);
+        if (it == promises_.end()) {
+            remember_early(request_id, CompleteResponse<ResponseType>(result));
+            return;
+        }
         if (it != promises_.end()) {
             try {
                 it->second.set_value(CompleteResponse<ResponseType>(result));
@@ -85,6 +109,10 @@ public:
     void set_error(int64_t request_id, int32_t error_code, const std::string& error_msg) {
         std::lock_guard<std::mutex> lock(mutex_);
         auto it = promises_.find(request_id);
+        if (it == promises_.end()) {
+            remember_early(request_id, CompleteResponse<ResponseType>(error_code, error_msg));
+            return;
+        }
         if (it != promises_.end()) {
             try {
                 it->second.set_value(CompleteResponse<ResponseType>(error_code, error_msg));
@@ -110,6 +138,7 @@ public:
     void cleanup(int64_t request_id) {
         std::lock_guard<std::mutex> lock(mutex_);
         promises_.erase(request_id);
+        early_responses_.erase(request_id);
     }
 };
 

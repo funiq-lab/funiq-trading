@@ -1,0 +1,31 @@
+{
+  "parsers": [
+    {
+      "id": "mock_trading",
+      "active": true,
+      "module": "ft_mock_trade_handler",
+      "config": {
+        "callback_mode": false,
+        "extended_config_file": "",
+        "login_mode": 2,
+        "accounts": [
+          {
+            "login_id": "MOCK_DEMO",
+            "cust_id": "MOCK_CUSTOMER",
+            "fund_account_id": "MOCK_FUND",
+            "account_id_sh": "MOCK_SH",
+            "account_id_sz": "MOCK_SZ",
+            "branch_id": "0000",
+            "password": ""
+          }
+        ],
+        "performance": {
+          "enabled": false,
+          "report_interval_ms": 5000,
+          "enable_latency_stats": true
+        }
+      },
+      "data": []
+    }
+  ]
+}
