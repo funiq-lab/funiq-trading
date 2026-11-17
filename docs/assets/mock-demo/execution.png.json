@@ -1,0 +1,8 @@
+{
+  "type": "browser-screenshot",
+  "source": "examples/http_web/viewer.html",
+  "source_sha256": "770185ca2bf79b2c0d99efae5e3a92c85bfaa1ee30bcbb79bc7677799a43de28",
+  "captured_at": "2026-11-17T03:36:45.477281+00:00",
+  "content": "Read-only HTTP Web client connected to the running C++ mock core.",
+  "simulation": "Synthetic quotes and in-memory fixed-price execution; no real orders."
+}

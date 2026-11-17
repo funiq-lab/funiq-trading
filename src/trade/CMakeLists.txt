@@ -56,7 +56,9 @@ set_target_properties(ft_base_trade_handler PROPERTIES
     POSITION_INDEPENDENT_CODE ON
 )
 
-add_subdirectory(atp_trade_handler)
+if(BUILD_VENDOR_ADAPTERS)
+    add_subdirectory(atp_trade_handler)
+endif()
 
 # =============================================================================
 # Trade 库
@@ -81,7 +83,7 @@ target_include_directories(ft_trade PUBLIC
 
 target_link_libraries(ft_trade PUBLIC
     ft_base_trade_handler
-    ft_atp_trade_handler
+    $<$<BOOL:${BUILD_VENDOR_ADAPTERS}>:ft_atp_trade_handler>
     ft_database_manager
     Boost::system
     Threads::Threads
@@ -121,7 +123,7 @@ if(BUILD_PRODUCTION)
     # 生产模式：使用动态链接系统库以避免PIC问题
     target_link_libraries(trade_service PRIVATE
         ft_base_trade_handler
-        ft_atp_trade_handler
+        $<$<BOOL:${BUILD_VENDOR_ADAPTERS}>:ft_atp_trade_handler>
         ft_logger
         ft_data
         ft_utils
@@ -140,7 +142,7 @@ else()
     # 开发模式：正常链接
     target_link_libraries(trade_service PRIVATE
         ft_base_trade_handler
-        ft_atp_trade_handler
+        $<$<BOOL:${BUILD_VENDOR_ADAPTERS}>:ft_atp_trade_handler>
         ft_database_manager
         Boost::system
         Threads::Threads

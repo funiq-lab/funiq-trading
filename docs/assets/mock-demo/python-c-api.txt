@@ -1,0 +1,30 @@
+Funiq Trading | Python -> ctypes -> existing C interface
+Core services and the mock account run inside this Python process.
+Structure fields verified against the core headers.
+
+[Logger] Using external logger state
+[Logger] Using external logger state
+{
+  "quote": {
+    "running": true,
+    "connected": true,
+    "plugin": "mock_quotes"
+  },
+  "trade": {
+    "running": true,
+    "connected": true,
+    "plugin": "mock_trading"
+  }
+}
+C quote_get_depth_data_by_code: 000001 last=15.09 sequence=9
+C quote_get_depth_data_by_code: 000001 last=15.05 sequence=205
+C quote_get_depth_data_by_code: 000001 last=15.07 sequence=407
+
+C trade_send_order_sync: bought 1000 shares, order=100001
+C trade_cancel_order_sync: cancelled order=100002, released 100.00 CNY
+C trade_query_funds_sync: cash=985,000.00 CNY, positions=15,000.00 CNY
+C trade_query_positions_sync: 000001 shares=1000
+[Logger] Reset to internal logger state
+[Logger] Reset to internal logger state
+PASS: C-interface quotes, orders, cancellation, account checks and clean shutdown
+Saved C-interface results: /app/build/python-c-api-capture/report.json

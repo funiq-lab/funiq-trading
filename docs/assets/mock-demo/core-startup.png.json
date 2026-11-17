@@ -1,0 +1,11 @@
+{
+  "type": "native-terminal-window-screenshot",
+  "application": "xterm",
+  "environment": "Linux development container with Xvfb and Openbox",
+  "capture_method": "scrot --focused --border",
+  "capture_script": "scripts/screenshots/capture_terminal.sh",
+  "captured_at": "2026-11-17T04:35:14.617874+00:00",
+  "image_sha256": "c5da198dae5bbe6abb07d0f28c9eb9208a39958646e85d2ace2136cc24ecf8df",
+  "output_log": "docs/assets/mock-demo/core-startup.txt",
+  "output_sha256": "52e273ef40df37f66356b7a0d40516088c88716b0370820afae64f38b0ce13e9"
+}

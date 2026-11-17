@@ -1,0 +1,11 @@
+{
+  "type": "native-terminal-window-screenshot",
+  "application": "xterm",
+  "environment": "Linux development container with Xvfb and Openbox",
+  "capture_method": "scrot --focused --border",
+  "capture_script": "scripts/screenshots/capture_terminal.sh",
+  "captured_at": "2026-11-17T04:35:21.574115+00:00",
+  "image_sha256": "3f4dbdc6287df586385bc328945df1e3ec8eb5260151f2868be315a9ed6408c0",
+  "output_log": "docs/assets/mock-demo/cpp-native.txt",
+  "output_sha256": "6c3cc2f17d688fdff81f7fd4893017a2782241a134557c5f1cc6ec235d3e41fb"
+}

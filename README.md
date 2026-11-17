@@ -1,5 +1,7 @@
 # Funiq Trading
 
+简体中文 · [English documentation](https://funiq-trading.funiqlab.com/en/)
+
 Funiq Trading 是一个专业的量化交易系统，为您提供完整的行情接入、策略执行和交易管理解决方案。系统采用模块化设计，支持多种行情数据源和交易接口。
 
 📖 **在线文档：[funiq-trading.funiqlab.com](https://funiq-trading.funiqlab.com)**
@@ -18,6 +20,18 @@ Funiq Trading 是一个专业的量化交易系统，为您提供完整的行情
 - **方便扩展**：行情、交易和策略分别管理，可以按需要增加或更换。
 - **减少额外开销**：策略直接在 C++ 程序中处理数据，内部调用不需要经过网络。
 - **方便开发和测试**：提供 Docker 开发环境、模拟行情和数据回放功能。
+
+## 示例（examples）
+
+`examples/` 提供三种接入方式，每个示例都有独立的运行说明和截图。
+
+| 示例 | 用途 |
+| --- | --- |
+| [C++ 直接调用](examples/cpp_native/README.md) | 在 C++ 程序中创建行情与交易服务，读取行情并操作模拟订单 |
+| [Python 调用 C 接口](examples/python_c_api/README.md) | 使用 Python 加载核心库，调用行情和交易函数 |
+| [Web 通过 HTTP 接入](examples/http_web/README.md) | 在浏览器中查看服务、行情、账户、订单与成交 |
+
+[核心后台运行与日志](examples/mock_core/README.md) · [示例总览](examples/README.md) · [English examples](examples/README.en.md) · [运行说明与截图](docs/MOCK_DEMO.md)
 
 ## 快速开始
 

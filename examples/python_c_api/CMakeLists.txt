@@ -1,0 +1,3 @@
+add_executable(python_c_api_layout layout.cpp)
+target_link_libraries(python_c_api_layout PRIVATE nlohmann_json::nlohmann_json SQLiteCpp)
+setup_target_compile_options(python_c_api_layout)

@@ -1,0 +1,104 @@
+{
+  "path": "Python -> ctypes -> C interface -> core",
+  "samples": [
+    {
+      "symbol": "000001",
+      "last": 15.09,
+      "sequence": 9
+    },
+    {
+      "symbol": "000001",
+      "last": 15.05,
+      "sequence": 205
+    },
+    {
+      "symbol": "000001",
+      "last": 15.07,
+      "sequence": 407
+    }
+  ],
+  "cash": 985000.0,
+  "frozen_cash": 0.0,
+  "shares": 1000,
+  "order_states": [
+    3,
+    4
+  ],
+  "calls": [
+    {
+      "function": "quote_init",
+      "result": 0
+    },
+    {
+      "function": "quote_start",
+      "result": 0
+    },
+    {
+      "function": "trade_init",
+      "result": 0
+    },
+    {
+      "function": "trade_start",
+      "result": 0
+    },
+    {
+      "function": "trade_get_account_info_by_id",
+      "result": 0
+    },
+    {
+      "function": "quote_get_depth_data_by_code",
+      "result": 0,
+      "symbol": "000001"
+    },
+    {
+      "function": "quote_get_depth_data_by_code",
+      "result": 0,
+      "symbol": "000001"
+    },
+    {
+      "function": "quote_get_depth_data_by_code",
+      "result": 0,
+      "symbol": "000001"
+    },
+    {
+      "function": "trade_send_order_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_send_order_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_query_funds_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_cancel_order_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_query_funds_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_query_positions_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_query_orders_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_query_trades_sync",
+      "result": 0
+    },
+    {
+      "function": "trade_stop",
+      "result": 0
+    },
+    {
+      "function": "quote_stop",
+      "result": 0
+    }
+  ]
+}

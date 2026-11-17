@@ -410,13 +410,16 @@ int BaseQuoteParser::stop_mock_replay()
         return -1;
     }
 
-    std::lock_guard<std::mutex> lock(_mutex);
     _mock_replay_running = false;
-    _mock_current_index = 0;
-
+    // The replay thread takes _mutex while updating its latest-data cache.
+    // Joining while holding that mutex can deadlock shutdown.
     if (_mock_replay_thread.joinable())
     {
         _mock_replay_thread.join();
+    }
+    {
+        std::lock_guard<std::mutex> lock(_mutex);
+        _mock_current_index = 0;
     }
 
     QUOTE_LOG_INFO("Mock replay stopped");

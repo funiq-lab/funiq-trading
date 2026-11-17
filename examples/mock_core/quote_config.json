@@ -1,0 +1,42 @@
+{
+  "parsers": [
+    {
+      "id": "mock_quotes",
+      "active": true,
+      "module": "ft_mock_quote_parser",
+      "config": {
+        "callback_mode": false,
+        "markets": [
+          "sse",
+          "szse"
+        ],
+        "data_types": [
+          "index",
+          "depth",
+          "entrust",
+          "trade"
+        ],
+        "extended_config_file": "",
+        "securities": [
+          {
+            "code": "600000"
+          },
+          {
+            "code": "000001"
+          }
+        ],
+        "performance": {
+          "enabled": false,
+          "report_interval_ms": 5000,
+          "enable_latency_stats": true
+        },
+        "mock": {
+          "enabled": true,
+          "mock_data_file": "./data/synthetic",
+          "loop_replay": true
+        }
+      },
+      "data": []
+    }
+  ]
+}

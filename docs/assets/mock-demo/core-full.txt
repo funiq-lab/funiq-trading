@@ -1,0 +1,478 @@
+-- Operation System is UNIX-like OS
+-- Platform is x64
+-- Generator is Unix Makefiles
+-- GCC version: 11.4.0
+-- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system thread 
+-- ✓ 使用动态 Boost 库（组件: system;thread）
+-- ✓ 使用内置 tinyxml2 源码: /app/lib/tinyxml2
+-- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system 
+-- ✓ 使用本地 spdlog (header-only): /app/include/spdlog
+-- === Logger配置完成 ===
+-- 使用 spdlog::spdlog_header_only (header-only 模式)
+-- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system thread 
+-- ✓ 使用动态 Boost 库（组件: system;thread）
+-- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system 
+-- ✓ 使用动态 Boost 库（组件: system）
+-- ✓ 使用内置 tinyxml2 源码: /app/lib/tinyxml2
+-- ✓ quote_service RPATH 设置：优先当前目录查找
+-- === Quote 模块构建配置 ===
+-- 静态库: ft_quote
+-- 共享库: quote_service
+-- 基础解析器: ft_base_quote_parser
+-- 开发模式: 使用动态依赖库
+-- ================================
+-- ✓ trade_service RPATH 设置：优先当前目录查找
+-- === Trade 模块构建配置 ===
+-- 静态库: ft_trade
+-- 共享库: trade_service
+-- 基础处理器: ft_base_trade_handler
+-- 数据库支持: ft_database_manager
+-- ================================
+-- ✓ strategy_service RPATH 设置：优先当前目录查找
+-- === Strategy 模块构建配置 ===
+-- 静态库: ft_strategy
+-- 共享库: strategy_service
+-- 基础策略: ft_base_strategy
+-- 数据库支持: ft_database_manager
+-- ====================================
+-- Using c++ standard c++17
+-- CMake version: 3.22.1
+-- Project version: 3.0.0
+-- CMAKE_CXX_COMPILER '/usr/bin/c++' 'GNU' '11.4.0'
+-- CMAKE_CXX_FLAGS                ' -D_FILE_OFFSET_BITS=32 -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long'
+-- CMAKE_CXX_FLAGS_DEBUG          '-g -O0 -DDEBUG -Wall -Wextra -fno-omit-frame-pointer'
+-- Compile sqlite3 from source in subdirectory
+-- SQLITECPP_RUN_CPPLINT OFF
+-- SQLITECPP_RUN_CPPCHECK OFF
+-- SQLITECPP_RUN_DOXYGEN OFF
+-- SQLITECPP_BUILD_EXAMPLES OFF
+-- SQLITECPP_BUILD_TESTS OFF
+-- 开发模式：ft_db_manager 正常编译
+-- === Database 模块构建配置 ===
+-- 静态库: ft_database_manager
+-- SQLiteCpp: 内部版本
+-- 输出名称: ft_database_manager
+-- 包含路径: /app/include
+-- ====================================
+-- === Network 模块构建配置 ===
+-- 静态库: ft_network
+-- 模块类型: 网络服务模块
+-- 依赖: logger, utils, boost, nlohmann_json
+-- ================================
+-- === 主程序构建配置 ===
+-- 可执行文件: ft_trading_client
+-- 主入口: main.cpp
+-- 依赖模块: network, quote, trade, strategy
+-- 输出目录: /app/build/mock/bin
+-- ================================
+-- === Build Configuration Summary ===
+-- Project: FuniqTrading v0.0.2
+-- Platform: x64
+-- C++ Standard: 17
+-- Build Type: Debug
+-- Compiler: GNU 11.4.0
+-- Production Build: OFF
+-- Static Linking: OFF
+-- Executable output path: /app/build/mock/build_x64/Debug/bin
+-- Library output path: /app/build/mock/build_x64/Debug/lib
+-- Available executables will be built in respective modules:
+--   - quote_service (in src/quote)
+-- Debug build enabled with the following tools:
+-- Debug tools available: gdb, valgrind, strace
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /app/build/mock
+[  2%] Built target copy_scripts
+Consolidate compiler generated dependencies of target tinyxml2_builtin
+[  5%] Built target tinyxml2_builtin
+Consolidate compiler generated dependencies of target sqlite3
+[  7%] Built target sqlite3
+Consolidate compiler generated dependencies of target ft_logger
+[ 10%] Built target ft_logger
+Consolidate compiler generated dependencies of target SQLiteCpp
+[ 18%] Built target SQLiteCpp
+Consolidate compiler generated dependencies of target python_c_api_layout
+[ 21%] Built target python_c_api_layout
+Consolidate compiler generated dependencies of target ft_utils
+[ 35%] Built target ft_utils
+Consolidate compiler generated dependencies of target ft_database_manager
+[ 37%] Built target ft_database_manager
+Consolidate compiler generated dependencies of target ft_data
+[ 41%] Built target ft_data
+Consolidate compiler generated dependencies of target ft_algorithm
+[ 43%] Built target ft_algorithm
+Consolidate compiler generated dependencies of target ft_base_trade_handler
+[ 46%] Built target ft_base_trade_handler
+Consolidate compiler generated dependencies of target ft_base_quote_parser
+[ 48%] Built target ft_base_quote_parser
+Consolidate compiler generated dependencies of target ft_trade
+[ 52%] Built target ft_trade
+Consolidate compiler generated dependencies of target ft_network
+[ 63%] Built target ft_network
+Consolidate compiler generated dependencies of target trade_service_exe
+[ 66%] Built target trade_service_exe
+Consolidate compiler generated dependencies of target trade_service
+[ 70%] Built target trade_service
+Consolidate compiler generated dependencies of target ft_strategy
+[ 73%] Built target ft_strategy
+Consolidate compiler generated dependencies of target strategy_service
+[ 77%] Built target strategy_service
+Consolidate compiler generated dependencies of target ft_mock_trade_handler
+[ 78%] Linking CXX shared library ../../../build_x64/Debug/lib/libft_mock_trade_handler.so
+Consolidate compiler generated dependencies of target ft_mock_quote_parser
+[ 80%] Linking CXX shared library ../../../build_x64/Debug/lib/libft_mock_quote_parser.so
+[ 81%] Built target ft_mock_quote_parser
+[ 82%] Built target ft_mock_trade_handler
+Consolidate compiler generated dependencies of target ft_quote
+[ 86%] Built target ft_quote
+Consolidate compiler generated dependencies of target mock_plugin_test
+[ 87%] Linking CXX executable build_x64/Debug/bin/mock_plugin_test
+Consolidate compiler generated dependencies of target quote_service
+[ 91%] Built target quote_service
+[ 92%] Built target mock_plugin_test
+Consolidate compiler generated dependencies of target quote_service_exe
+[ 95%] Built target quote_service_exe
+Consolidate compiler generated dependencies of target cpp_native_example
+[ 97%] Built target cpp_native_example
+Consolidate compiler generated dependencies of target ft_trading_client
+[100%] Built target ft_trading_client
+Internal ctest changing into directory: /app/build/mock
+Test project /app/build/mock
+    Start 1: mock_plugins
+1/4 Test #1: mock_plugins .....................   Passed    0.03 sec
+    Start 2: cpp_native_calls
+2/4 Test #2: cpp_native_calls .................   Passed    0.74 sec
+    Start 3: python_c_api_calls
+3/4 Test #3: python_c_api_calls ...............   Passed    0.79 sec
+    Start 4: mock_backend_logging
+4/4 Test #4: mock_backend_logging .............   Passed    2.05 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Total Test time (real) =   3.62 sec
+[2026-11-17 04:35:12.798663] [info] [network] [34] [logger.cpp:225] Logger 'network' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.798680] [info] [network] [34] [main.cpp:733] Loaded environment variables from: .env
+[2026-11-17 04:35:12.798683] [info] [network] [34] [main.cpp:741] Starting FT Trading Network API Server...
+[2026-11-17 04:35:12.798684] [info] [network] [34] [main.cpp:65] Initializing database service...
+[2026-11-17 04:35:12.799774] [info] [server] [34] [logger.cpp:225] Logger 'server' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.799787] [info] [server] [34] [database_manager.cpp:29] Loaded .env file for database configuration
+[2026-11-17 04:35:12.799793] [info] [server] [34] [database_manager.cpp:105] Database configuration loaded - db_path: /app/build/terminal-core/data/trading.db, backup_path: /app/build/terminal-core/data/backup
+[2026-11-17 04:35:12.799994] [info] [server] [34] [database_manager.cpp:121] Created database directory: /app/build/terminal-core/data
+[2026-11-17 04:35:12.800005] [info] [server] [34] [database_manager.cpp:136] Created backup directory: /app/build/terminal-core/data/backup
+[2026-11-17 04:35:12.807487] [info] [server] [34] [database_manager.cpp:278] Database tables created successfully
+[2026-11-17 04:35:12.807552] [info] [server] [34] [database_manager.cpp:311] Database indexes created successfully
+[2026-11-17 04:35:12.807561] [info] [server] [34] [database_manager.cpp:71] Database initialized successfully: /app/build/terminal-core/data/trading.db
+[2026-11-17 04:35:12.807563] [info] [network] [34] [main.cpp:77] Database service initialized successfully
+[2026-11-17 04:35:12.807564] [info] [network] [34] [main.cpp:90] Initializing quote service...
+[2026-11-17 04:35:12.808375] [info] [quote] [34] [logger.cpp:225] Logger 'quote' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.808388] [info] [quote] [34] [quote_service.cpp:12] QuoteService created
+[2026-11-17 04:35:12.808417] [info] [quote] [34] [quote_service.cpp:41] Using quote config file from environment: /app/examples/mock_core/quote_config.json
+[2026-11-17 04:35:12.809033] [info] [quote] [34] [quote_service.cpp:189] Config file loaded successfully: /app/examples/mock_core/quote_config.json
+[2026-11-17 04:35:12.809307] [info] [quote] [34] [quote_parser_adapter.cpp:42] Initializing parser mock_quotes with module: ft_mock_quote_parser
+[Logger] Using external logger state
+[2026-11-17 04:35:12.814315] [info] [quote] [34] [quote_parser_adapter.cpp:218] Loaded parser library: libft_mock_quote_parser.so
+[2026-11-17 04:35:12.814357] [info] [quote] [34] [quote_parser_adapter.cpp:293] Successfully set main logger state to parser library mock_quotes
+[2026-11-17 04:35:12.814604] [info] [quote] [34] [quote_parser_adapter.cpp:309] Parser instance created for mock_quotes
+[2026-11-17 04:35:12.814620] [info] [quote] [34] [quote_parser_adapter.cpp:57] Parser adapter mock_quotes initialized successfully
+[2026-11-17 04:35:12.814639] [info] [quote] [34] [quote_service.cpp:76] QuoteService initialized successfully with parser: mock_quotes
+[2026-11-17 04:35:12.814669] [info] [network] [34] [main.cpp:104] Quote service initialized successfully
+[2026-11-17 04:35:12.814680] [info] [network] [34] [main.cpp:108] Quote parser ID: mock_quotes
+[2026-11-17 04:35:12.814682] [info] [network] [34] [main.cpp:117] Initializing trade service...
+[2026-11-17 04:35:12.815959] [info] [trade] [34] [logger.cpp:225] Logger 'trade' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.815972] [info] [trade] [34] [trade_service.cpp:14] TradeService created
+[2026-11-17 04:35:12.816002] [info] [trade] [34] [trade_service.cpp:42] Using trade config file from environment: /app/examples/mock_core/trade_config.json
+[2026-11-17 04:35:12.816776] [info] [trade] [34] [trade_service.cpp:209] Config file loaded successfully: /app/examples/mock_core/trade_config.json
+[2026-11-17 04:35:12.816878] [info] [trade] [34] [trade_handler_adapter.cpp:43] Initializing trade handler mock_trading with module: ft_mock_trade_handler
+[Logger] Using external logger state
+[2026-11-17 04:35:12.825449] [info] [trade] [34] [trade_handler_adapter.cpp:254] Loaded trade handler library: libft_mock_trade_handler.so
+[2026-11-17 04:35:12.825480] [info] [trade] [34] [trade_handler_adapter.cpp:305] Successfully set main logger state to trade handler library mock_trading
+[2026-11-17 04:35:12.826371] [info] [trade] [34] [trade_handler_adapter.cpp:321] Trade handler instance created successfully for mock_trading
+[2026-11-17 04:35:12.826380] [info] [trade] [34] [trade_handler_adapter.cpp:58] Trade handler adapter mock_trading initialized successfully
+[2026-11-17 04:35:12.826384] [info] [trade] [34] [trade_service.cpp:77] TradeService initialized successfully with handler: mock_trading
+[2026-11-17 04:35:12.826407] [info] [network] [34] [main.cpp:131] Trade service initialized successfully
+[2026-11-17 04:35:12.826421] [info] [network] [34] [main.cpp:137] Database manager injected into trade service
+[2026-11-17 04:35:12.826425] [info] [network] [34] [main.cpp:143] Trade interface ID: mock_trading
+[2026-11-17 04:35:12.826426] [info] [network] [34] [main.cpp:152] Initializing strategy service...
+[2026-11-17 04:35:12.827875] [info] [strategy] [34] [logger.cpp:225] Logger 'strategy' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.827889] [info] [strategy] [34] [strategy_service.cpp:66] Using strategy config file from environment: /app/examples/mock_core/strategy_config.json
+[2026-11-17 04:35:12.827892] [info] [strategy] [34] [strategy_service.cpp:69] Initializing StrategyService with config: /app/examples/mock_core/strategy_config.json
+[2026-11-17 04:35:12.828616] [info] [strategy] [34] [strategy_service.cpp:623] Config loaded successfully from: /app/examples/mock_core/strategy_config.json
+[2026-11-17 04:35:12.830294] [info] [strategy] [34] [strategy_adapter.cpp:23] StrategyAdapter created with 1 threads
+[2026-11-17 04:35:12.830326] [info] [strategy] [34] [strategy_adapter.cpp:43] Initializing thread pool with 1 threads
+[2026-11-17 04:35:12.830353] [info] [strategy] [34] [strategy_adapter.cpp:47] No cores specified, not binding threads to any CPU core
+[2026-11-17 04:35:12.830580] [info] [strategy] [34] [strategy_adapter.cpp:78] StrategyAdapter initialized successfully with 1 threads
+[2026-11-17 04:35:12.832770] [info] [strategy] [34] [logger.cpp:225] Logger 'strategy' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.832792] [info] [strategy] [34] [strategy_adapter.cpp:264] Strategy registered from config: id=paper_stop_001, module=StopProfitLossStrategy
+[2026-11-17 04:35:12.833115] [info] [strategy] [34] [strategy_adapter.cpp:423] Strategy instance created successfully: paper_stop_001
+[2026-11-17 04:35:12.833128] [info] [strategy] [34] [strategy_adapter.cpp:224] Strategy instance created from config: paper_stop_001
+[2026-11-17 04:35:12.833135] [info] [strategy] [34] [strategy_adapter.cpp:231] Loaded 1 strategies from config
+[2026-11-17 04:35:12.833137] [info] [strategy] [34] [strategy_service.cpp:105] StrategyService initialized successfully with multi-strategy support
+[2026-11-17 04:35:12.833149] [info] [network] [34] [main.cpp:166] Strategy service initialized successfully
+[2026-11-17 04:35:12.833164] [info] [strategy] [34] [strategy_adapter.cpp:868] Database manager set for strategy adapter and 1 instances
+[2026-11-17 04:35:12.833165] [info] [strategy] [34] [strategy_service.cpp:506] Database manager set for strategy service
+[2026-11-17 04:35:12.833166] [info] [network] [34] [main.cpp:172] Database manager injected into strategy service
+[2026-11-17 04:35:12.833167] [info] [network] [34] [main.cpp:181] Initializing network service...
+[2026-11-17 04:35:12.833194] [info] [network] [34] [main.cpp:211] Registering API handlers...
+[2026-11-17 04:35:12.833204] [info] [network] [34] [system_api_handler.cpp:25] SystemApiHandler created with prefix: /system
+[2026-11-17 04:35:12.833221] [info] [network] [34] [system_api_handler.cpp:63] SystemApiHandler routes registered
+[2026-11-17 04:35:12.833222] [info] [network] [34] [network_service.cpp:290] Handler registered with prefix: /system
+[2026-11-17 04:35:12.833392] [info] [network] [34] [trade_api_handler.cpp:24] TradeApiHandler created
+[2026-11-17 04:35:12.833499] [info] [network] [34] [trade_api_handler.cpp:98] TradeApiHandler routes registered
+[2026-11-17 04:35:12.833502] [info] [network] [34] [network_service.cpp:290] Handler registered with prefix: /trade
+[2026-11-17 04:35:12.833505] [info] [network] [34] [quote_api_handler.cpp:13] QuoteApiHandler created
+[2026-11-17 04:35:12.833513] [info] [network] [34] [quote_api_handler.cpp:42] QuoteApiHandler routes registered
+[2026-11-17 04:35:12.833515] [info] [network] [34] [network_service.cpp:290] Handler registered with prefix: /quote
+[2026-11-17 04:35:12.833517] [info] [network] [34] [strategy_api_handler.cpp:15] StrategyApiHandler created with prefix: /strategy
+[2026-11-17 04:35:12.833534] [info] [network] [34] [strategy_api_handler.cpp:77] StrategyApiHandler routes registered
+[2026-11-17 04:35:12.833535] [info] [network] [34] [network_service.cpp:290] Handler registered with prefix: /strategy
+[2026-11-17 04:35:12.833536] [info] [network] [34] [main.cpp:229] API handlers registered successfully
+[2026-11-17 04:35:12.834254] [info] [network] [34] [network_service.cpp:171] Network service initialized on 0.0.0.0:8080
+[2026-11-17 04:35:12.835350] [info] [network] [34] [network_service.cpp:100] Network service started on 0.0.0.0:8080 with 4 threads
+[2026-11-17 04:35:12.835363] [info] [network] [34] [main.cpp:196] Network service started on 0.0.0.0:8080
+[2026-11-17 04:35:12.835405] [info] [network] [34] [main.cpp:384] Initializing cron scheduler...
+[2026-11-17 04:35:12.836038] [info] [scheduler] [34] [logger.cpp:225] Logger 'scheduler' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.836056] [info] [scheduler] [34] [cron_scheduler.cpp:47] CronScheduler started successfully
+[2026-11-17 04:35:12.836113] [info] [scheduler] [513] [cron_scheduler.cpp:37] CronScheduler worker thread started
+[2026-11-17 04:35:12.836152] [info] [scheduler] [34] [cron_scheduler.cpp:114] Added cron job 'strategy_order_cleanup' (ID: 1) with expression '0 0 16 * * *', next execution: 2026-11-17 16:00:00
+[2026-11-17 04:35:12.836155] [info] [network] [34] [main.cpp:406] Added daily cleanup job (ID: 1) at 16:00
+[2026-11-17 04:35:12.836156] [info] [network] [34] [main.cpp:414] Cron scheduler initialized successfully
+[2026-11-17 04:35:12.836157] [info] [network] [34] [main.cpp:648] Initializing trading time manager...
+[2026-11-17 04:35:12.837204] [info] [network] [34] [main.cpp:659] Trading time manager initialized successfully
+[2026-11-17 04:35:12.837213] [info] [network] [34] [main.cpp:235] Setting up service dependencies...
+[2026-11-17 04:35:12.837254] [info] [network] [34] [main.cpp:242] Quote parser: 0xaaaae7e8f050, Trade handler: 0xaaaae7e93e70, Strategy service: 0xaaaae7e97900, Database manager: 0xaaaae7e4eed0
+[2026-11-17 04:35:12.837279] [info] [strategy] [34] [strategy_adapter.cpp:666] Quote parser set for strategy adapter and 1 instances
+[2026-11-17 04:35:12.837280] [info] [strategy] [34] [strategy_service.cpp:471] Quote parser set successfully for multi-strategy service
+[2026-11-17 04:35:12.837286] [info] [strategy] [34] [strategy_adapter.cpp:678] Trade handler set for strategy adapter and 1 instances
+[2026-11-17 04:35:12.837287] [info] [strategy] [34] [strategy_service.cpp:493] Trade handler set successfully for multi-strategy service
+[2026-11-17 04:35:12.837292] [info] [strategy] [34] [strategy_service.cpp:562] Trading time manager set successfully for strategy service
+[2026-11-17 04:35:12.837294] [info] [network] [34] [trade_api_handler.cpp:103] QuoteParser set for TradeApiHandler
+[2026-11-17 04:35:12.837294] [info] [network] [34] [main.cpp:259] QuoteParser injected into TradeApiHandler
+[2026-11-17 04:35:12.837295] [info] [network] [34] [trade_api_handler.cpp:113] TradeHandler set for TradeApiHandler
+[2026-11-17 04:35:12.837296] [info] [network] [34] [main.cpp:265] TradeHandler injected into TradeApiHandler
+[2026-11-17 04:35:12.837297] [info] [network] [34] [trade_api_handler.cpp:123] TradingTimeManager set for TradeApiHandler
+[2026-11-17 04:35:12.837297] [info] [network] [34] [main.cpp:271] TradingTimeManager injected into TradeApiHandler
+[2026-11-17 04:35:12.837298] [info] [network] [34] [trade_api_handler.cpp:132] Attempting to initialize and start TWAP algorithm...
+[2026-11-17 04:35:12.837299] [info] [network] [34] [trade_api_handler.cpp:187] Initializing TWAP algorithm...
+[2026-11-17 04:35:12.837417] [info] [server] [34] [twap.cpp:106] TwapAlgorithm initialized successfully
+[2026-11-17 04:35:12.837418] [info] [network] [34] [trade_api_handler.cpp:207] TWAP algorithm initialized successfully
+[2026-11-17 04:35:12.837420] [info] [network] [34] [trade_api_handler.cpp:228] Starting TWAP algorithm...
+[2026-11-17 04:35:12.837456] [info] [server] [34] [twap.cpp:162] TwapAlgorithm started successfully
+[2026-11-17 04:35:12.837457] [info] [network] [34] [trade_api_handler.cpp:236] TWAP algorithm started successfully
+[2026-11-17 04:35:12.837458] [info] [network] [34] [trade_api_handler.cpp:154] TWAP algorithm successfully initialized and started
+[2026-11-17 04:35:12.837483] [info] [network] [34] [main.cpp:281] Service instances set to network service
+[2026-11-17 04:35:12.837484] [info] [network] [34] [main.cpp:289] Service dependencies configured successfully
+[2026-11-17 04:35:12.837485] [info] [network] [34] [main.cpp:670] Initializing auto scheduler...
+[2026-11-17 04:35:12.837487] [info] [server] [34] [auto_scheduler.cpp:19] AutoScheduler constructed (TradingTimeManager will be injected)
+[2026-11-17 04:35:12.837492] [info] [server] [34] [auto_scheduler.cpp:41] AutoScheduler: TradingTimeManager set with 1 trading sessions, 0 holidays
+[2026-11-17 04:35:12.837494] [info] [server] [519] [twap.cpp:597] TWAP cleanup thread started
+[2026-11-17 04:35:12.837500] [info] [server] [34] [auto_scheduler.cpp:46] Session 1: 00:00 - 23:59
+[2026-11-17 04:35:12.837526] [info] [server] [518] [twap.cpp:562] TWAP execution thread started
+[2026-11-17 04:35:12.837533] [info] [network] [34] [main.cpp:684] TradingTimeManager injected into AutoScheduler
+[2026-11-17 04:35:12.837538] [info] [server] [34] [auto_scheduler.cpp:428] Cron jobs cleaned up
+[2026-11-17 04:35:12.837565] [info] [server] [34] [auto_scheduler.cpp:317] Checking for schedule overlaps with 1 minutes interval...
+[2026-11-17 04:35:12.837567] [info] [server] [34] [auto_scheduler.cpp:320] Only 1 session(s), no overlaps possible
+[2026-11-17 04:35:12.837683] [info] [scheduler] [34] [cron_scheduler.cpp:114] Added cron job 'auto_start_0' (ID: 2) with expression '0 59 23 * * *', next execution: 2026-11-17 23:59:00
+[2026-11-17 04:35:12.837699] [info] [server] [34] [auto_scheduler.cpp:283] Added start job: auto_start_0 at 23:59 (1min before trading: 00:00)
+[2026-11-17 04:35:12.837767] [info] [scheduler] [34] [cron_scheduler.cpp:114] Added cron job 'auto_stop_0' (ID: 3) with expression '0 0 0 * * *', next execution: 2026-11-18 00:00:00
+[2026-11-17 04:35:12.837773] [info] [server] [34] [auto_scheduler.cpp:303] Added stop job: auto_stop_0 at 00:00 (1min after trading: 23:59)
+[2026-11-17 04:35:12.837776] [info] [server] [34] [auto_scheduler.cpp:310] Successfully set up 2 trading cron jobs
+[2026-11-17 04:35:12.837777] [info] [server] [34] [auto_scheduler.cpp:101] AutoScheduler started successfully
+[2026-11-17 04:35:12.837783] [info] [server] [34] [auto_scheduler.cpp:513] Currently in trading time, starting services
+[2026-11-17 04:35:12.837789] [info] [server] [34] [auto_scheduler.cpp:454] Trading time approaching (1min before), starting services automatically
+[2026-11-17 04:35:12.838029] [warning] [quote] [34] [quote_parser_adapter.cpp:875] No valid active data configuration found, data_manager will not be initialized
+[2026-11-17 04:35:12.840285] [info] [quote] [34] [logger.cpp:225] Logger 'quote' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.840314] [info] [quote] [34] [base_quote_parser.cpp:66] BaseQuoteParser::init
+[2026-11-17 04:35:12.840306] [info] [quote] [34] [quote_parser_adapter.cpp:418] Mock mode enabled - file: ./data/synthetic, loop: true
+[2026-11-17 04:35:12.841494] [info] [quote] [34] [base_quote_parser.cpp:2403] Subscription initialized - markets: 2, data_types: 4, securities: 2
+[2026-11-17 04:35:12.841538] [info] [quote] [34] [base_quote_parser.cpp:1398] Performance config - enabled: false, latency: true, interval: 5000ms
+[2026-11-17 04:35:12.841548] [info] [quote] [34] [base_quote_parser.cpp:1421] Mock mode enabled - file: ./data/synthetic, loop: true
+[2026-11-17 04:35:12.841516] [info] [quote] [34] [base_quote_parser.cpp:86] Callback mode: disabled
+[2026-11-17 04:35:12.841550] [info] [quote] [34] [base_quote_parser.cpp:94] Running in Mock mode, loading mock data
+[2026-11-17 04:35:12.841561] [info] [quote] [34] [base_quote_parser.cpp:1598] Loading typed mock data from base path: ./data/synthetic
+[2026-11-17 04:35:12.841737] [warning] [quote] [34] [base_quote_parser.cpp:1631] Failed to load mock data for type 5 from: ./data/synthetic_trade.dat
+[2026-11-17 04:35:12.841846] [warning] [quote] [34] [base_quote_parser.cpp:1631] Failed to load mock data for type 4 from: ./data/synthetic_entrust.dat
+[2026-11-17 04:35:12.841926] [warning] [quote] [34] [base_quote_parser.cpp:1631] Failed to load mock data for type 2 from: ./data/synthetic_depth.dat
+[2026-11-17 04:35:12.842018] [warning] [quote] [34] [base_quote_parser.cpp:1631] Failed to load mock data for type 1 from: ./data/synthetic_index.dat
+[2026-11-17 04:35:12.842028] [warning] [quote] [34] [base_quote_parser.cpp:1638] No mock data files found, will generate synthetic data
+[2026-11-17 04:35:12.842039] [info] [quote] [34] [base_quote_parser.cpp:112] No data output configured, using memory cache
+[2026-11-17 04:35:12.842042] [info] [quote] [34] [mock_quote_parser.cpp:21] MOCK quote plugin ready: BaseQuoteParser synthetic / replay data; no vendor connection
+[2026-11-17 04:35:12.842120] [info] [quote] [34] [base_quote_parser.cpp:2050] Mock replay started (synthetic data)
+[2026-11-17 04:35:12.842154] [info] [quote] [34] [quote_parser_adapter.cpp:119] Parser mock_quotes started successfully
+[2026-11-17 04:35:12.842156] [info] [quote] [34] [quote_service.cpp:110] QuoteService started successfully
+[2026-11-17 04:35:12.842194] [info] [quote] [522] [base_quote_parser.cpp:1788] Typed mock replay loop started with high precision timing
+[2026-11-17 04:35:12.844487] [info] [trade] [34] [logger.cpp:225] Logger 'trade' initialized - Level: info, Async: true, Console: true, File: enabled, FlushLevel: error
+[2026-11-17 04:35:12.844517] [info] [trade] [34] [trade_handler_adapter.cpp:708] Successfully parsed 1 valid accounts
+[2026-11-17 04:35:12.844545] [info] [trade] [34] [trade_handler_adapter.cpp:736] === Trade Handler Configuration Summary ===
+[2026-11-17 04:35:12.844548] [info] [trade] [34] [trade_handler_adapter.cpp:737] Handler ID: mock_trading
+[2026-11-17 04:35:12.844552] [info] [trade] [34] [trade_handler_adapter.cpp:741] Extended config file: 
+[2026-11-17 04:35:12.844556] [info] [trade] [34] [trade_handler_adapter.cpp:750] Callback mode: disabled
+[2026-11-17 04:35:12.844561] [info] [trade] [34] [trade_handler_adapter.cpp:758] Configured accounts: 1
+[2026-11-17 04:35:12.844608] [info] [trade] [34] [trade_handler_adapter.cpp:804] Unique customers: 1, Unique fund accounts: 1
+[2026-11-17 04:35:12.844613] [info] [trade] [34] [trade_handler_adapter.cpp:830] Data output: none (memory cache only)
+[2026-11-17 04:35:12.844614] [info] [trade] [34] [trade_handler_adapter.cpp:838] ============================================
+[2026-11-17 04:35:12.844617] [info] [trade] [34] [base_trade_handler.cpp:64] BaseTradeHandler::init
+[2026-11-17 04:35:12.844621] [info] [trade] [34] [base_trade_handler.cpp:81] Login mode: FUND_ACCOUNT_ID
+[2026-11-17 04:35:12.844623] [info] [trade] [34] [base_trade_handler.cpp:85] Callback mode: disabled
+[2026-11-17 04:35:12.844624] [info] [trade] [34] [base_trade_handler.cpp:2422] Starting account loading from config...
+[2026-11-17 04:35:12.844511] [info] [trade] [34] [trade_handler_adapter.cpp:682] Parsed account 1: login_id=MOCK_DEMO, cust_id=MOCK_CUSTOMER, fund_account_id=MOCK_FUND, account_id_sh=MOCK_SH, account_id_sz=MOCK_SZ
+[2026-11-17 04:35:12.844603] [info] [trade] [34] [trade_handler_adapter.cpp:796]   Account 1: login_id=MOCK_DEMO, fund=MOCK_FUND, SH=MOCK_SH, SZ=MOCK_SZ
+[2026-11-17 04:35:12.844891] [info] [trade] [34] [base_trade_handler.cpp:2436] Found 1 accounts in configuration
+[2026-11-17 04:35:12.844952] [info] [trade] [34] [base_trade_handler.cpp:2443] Loading account 1 of 1
+[2026-11-17 04:35:12.844963] [info] [trade] [34] [base_trade_handler.cpp:864] add_account called for login_id: MOCK_DEMO
+[2026-11-17 04:35:12.845154] [info] [trade] [34] [base_trade_handler.cpp:898] Initialized SH account data: MOCK_DEMO_MOCK_FUND_MOCK_SH
+[2026-11-17 04:35:12.845164] [info] [trade] [34] [base_trade_handler.cpp:915] Initialized SZ account data: MOCK_DEMO_MOCK_FUND_MOCK_SZ
+[2026-11-17 04:35:12.845199] [info] [trade] [34] [base_trade_handler.cpp:103] No data output configured, using memory cache
+[2026-11-17 04:35:12.845174] [info] [trade] [34] [base_trade_handler.cpp:918] Added account: MOCK_DEMO, total accounts: 1
+[2026-11-17 04:35:12.845186] [info] [trade] [34] [base_trade_handler.cpp:2455] Loaded account from config: login_id=MOCK_DEMO, cust_id=MOCK_CUSTOMER, fund_account_id=MOCK_FUND, account_id_sh=MOCK_SH, account_id_sz=MOCK_SZ
+[2026-11-17 04:35:12.845189] [info] [trade] [34] [base_trade_handler.cpp:2471] Completed processing account 1 of 1
+[2026-11-17 04:35:12.845192] [info] [trade] [34] [base_trade_handler.cpp:2474] Account loading completed - loaded: 1, failed: 0, total: 1
+[2026-11-17 04:35:12.845198] [info] [trade] [34] [base_trade_handler.cpp:1510] Performance stats configured - enabled: false, interval: 5000ms
+[2026-11-17 04:35:12.845243] [info] [trade] [34] [base_trade_handler.cpp:2552] Account MOCK_DEMO marked as logged in, total logged in accounts: 1
+[2026-11-17 04:35:12.845225] [info] [trade] [34] [mock_trade_handler.cpp:67] MOCK trade plugin ready: 1 in-memory account(s), 1000000 CNY initial cash, fixed-price fills
+[2026-11-17 04:35:12.845246] [info] [trade] [34] [trade_handler_adapter.cpp:121] Trade handler mock_trading started successfully
+[2026-11-17 04:35:12.845248] [info] [trade] [34] [trade_service.cpp:110] TradeService started successfully
+[2026-11-17 04:35:12.845327] [info] [strategy] [34] [strategy_adapter.cpp:452] Strategy instance started successfully: paper_stop_001
+[2026-11-17 04:35:12.845336] [info] [strategy] [34] [strategy_adapter.cpp:578] Started 1 strategy instances
+[2026-11-17 04:35:12.845339] [info] [strategy] [34] [strategy_adapter.cpp:104] Auto-started 1 strategy instances on adapter start
+[2026-11-17 04:35:12.845340] [info] [strategy] [34] [strategy_adapter.cpp:107] StrategyAdapter started successfully
+[2026-11-17 04:35:12.845416] [info] [strategy] [34] [strategy_service.cpp:671] Quote callback mode setup successfully for multi-strategy
+[2026-11-17 04:35:12.845526] [info] [strategy] [34] [strategy_service.cpp:809] Trade callback mode setup successfully for multi-strategy with enhanced callbacks
+[2026-11-17 04:35:12.845559] [info] [strategy] [34] [strategy_service.cpp:146] StrategyService started successfully with ready data sources
+[2026-11-17 04:35:12.845562] [info] [network] [34] [trade_api_handler.cpp:132] Attempting to initialize and start TWAP algorithm...
+[2026-11-17 04:35:12.845563] [info] [network] [34] [trade_api_handler.cpp:167] TWAP algorithm already initialized
+[2026-11-17 04:35:12.845565] [info] [network] [34] [trade_api_handler.cpp:224] TWAP algorithm is already running
+[2026-11-17 04:35:12.845566] [info] [network] [34] [trade_api_handler.cpp:154] TWAP algorithm successfully initialized and started
+[2026-11-17 04:35:12.845567] [info] [server] [34] [auto_scheduler.cpp:460] Services started successfully (auto mode)
+[2026-11-17 04:35:12.845547] [info] [strategy] [34] [strategy_service.cpp:604] Multi-strategy data processing modes - Quote: CALLBACK, Trade: CALLBACK
+[2026-11-17 04:35:13.847806] [info] [network] [34] [main.cpp:699] Auto scheduler initialized successfully
+[2026-11-17 04:35:13.848069] [info] [network] [34] [main.cpp:702] Current trading time: YES
+[2026-11-17 04:35:13.848138] [info] [network] [34] [main.cpp:707] Next trading time: Tue Nov 17 04:35:13 2026
+
+[2026-11-17 04:35:13.848149] [info] [network] [34] [main.cpp:813] All services initialized and network API is ready!
+[2026-11-17 04:35:13.848163] [info] [network] [34] [main.cpp:814] API server listening on http://0.0.0.0:8080
+[2026-11-17 04:35:13.848167] [info] [network] [34] [main.cpp:817] Use GET /api for endpoint documentation
+[2026-11-17 04:35:13.848171] [info] [network] [34] [main.cpp:427] === Service Status ===
+[2026-11-17 04:35:13.848226] [info] [network] [34] [main.cpp:430] Quote Service: RUNNING
+[2026-11-17 04:35:13.848238] [info] [network] [34] [main.cpp:431]   - Connection: CONNECTED
+[2026-11-17 04:35:13.848270] [info] [network] [34] [main.cpp:434] Trade Service: RUNNING
+[2026-11-17 04:35:13.848294] [info] [network] [34] [main.cpp:435]   - Connection: CONNECTED
+[2026-11-17 04:35:13.848319] [info] [network] [34] [main.cpp:438] Strategy Service: RUNNING
+[2026-11-17 04:35:13.848331] [info] [network] [34] [main.cpp:439]   - Initialized: YES
+[2026-11-17 04:35:13.848334] [info] [network] [34] [main.cpp:444] Database Service: INITIALIZED
+[2026-11-17 04:35:13.848338] [info] [network] [34] [main.cpp:454] Network Service: RUNNING
+[2026-11-17 04:35:13.848342] [info] [network] [34] [main.cpp:455]   - Address: 0.0.0.0:8080
+[2026-11-17 04:35:13.848345] [info] [network] [34] [main.cpp:466] Cron Scheduler: RUNNING
+[2026-11-17 04:35:13.848445] [info] [network] [34] [main.cpp:477] Auto Scheduler: RUNNING
+[2026-11-17 04:35:13.848448] [info] [network] [34] [main.cpp:484] ======================
+[2026-11-17 04:35:13.848449] [info] [network] [34] [main.cpp:820] Press Ctrl+C to shutdown
+[2026-11-17 04:35:14.678715] [info] [network] [509] [system_api_handler.cpp:609] Starting quote service...
+[2026-11-17 04:35:14.678739] [info] [quote] [509] [quote_service.cpp:97] Service already running
+[2026-11-17 04:35:14.678741] [info] [network] [509] [system_api_handler.cpp:612] Quote service started successfully
+[2026-11-17 04:35:14.678766] [info] [network] [509] [system_api_handler.cpp:635] Starting trade service...
+[2026-11-17 04:35:14.678779] [info] [trade] [509] [trade_service.cpp:97] Service already running
+[2026-11-17 04:35:14.678783] [info] [network] [509] [system_api_handler.cpp:638] Trade service started successfully
+[2026-11-17 04:35:14.678993] [info] [strategy] [509] [strategy_adapter.cpp:666] Quote parser set for strategy adapter and 1 instances
+[2026-11-17 04:35:14.679029] [info] [strategy] [509] [strategy_service.cpp:671] Quote callback mode setup successfully for multi-strategy
+[2026-11-17 04:35:14.679437] [info] [strategy] [509] [strategy_service.cpp:809] Trade callback mode setup successfully for multi-strategy with enhanced callbacks
+[2026-11-17 04:35:14.679761] [info] [strategy] [509] [strategy_service.cpp:471] Quote parser set successfully for multi-strategy service
+[2026-11-17 04:35:14.679823] [info] [strategy] [509] [strategy_adapter.cpp:678] Trade handler set for strategy adapter and 1 instances
+[2026-11-17 04:35:14.679472] [info] [strategy] [509] [strategy_service.cpp:604] Multi-strategy data processing modes - Quote: CALLBACK, Trade: CALLBACK
+[2026-11-17 04:35:14.679865] [info] [strategy] [509] [strategy_service.cpp:671] Quote callback mode setup successfully for multi-strategy
+[2026-11-17 04:35:14.679900] [info] [strategy] [509] [strategy_service.cpp:604] Multi-strategy data processing modes - Quote: CALLBACK, Trade: CALLBACK
+[2026-11-17 04:35:14.679890] [info] [strategy] [509] [strategy_service.cpp:809] Trade callback mode setup successfully for multi-strategy with enhanced callbacks
+[2026-11-17 04:35:14.679904] [info] [strategy] [509] [strategy_service.cpp:493] Trade handler set successfully for multi-strategy service
+[2026-11-17 04:35:14.679906] [info] [network] [509] [system_api_handler.cpp:661] Starting strategy service...
+[2026-11-17 04:35:14.679908] [info] [strategy] [509] [strategy_service.cpp:128] StrategyService already running
+[2026-11-17 04:35:14.679909] [info] [network] [509] [system_api_handler.cpp:664] Strategy service started successfully
+[2026-11-17 04:35:15.616258] [info] [trade] [511] [base_trade_handler.cpp:1206] Sending Order - request_id: 2, login_id: MOCK_DEMO, fund_account: MOCK_FUND, security_code: 000001, market: 2, side: BUY, order_type: 1, price: 20.0000, quantity: 1000, batch_id: 0
+[2026-11-17 04:35:15.616392] [info] [trade] [511] [mock_trade_handler.cpp:177] MOCK order 100001: BUY 000001 x 1000, status 3
+[2026-11-17 04:35:15.617404] [info] [trade] [509] [base_trade_handler.cpp:1206] Sending Order - request_id: 3, login_id: MOCK_DEMO, fund_account: MOCK_FUND, security_code: 000001, market: 2, side: BUY, order_type: 1, price: 1.0000, quantity: 100, batch_id: 0
+[2026-11-17 04:35:15.617454] [info] [trade] [509] [mock_trade_handler.cpp:177] MOCK order 100002: BUY 000001 x 100, status 1
+[2026-11-17 04:35:15.619443] [info] [trade] [509] [base_trade_handler.cpp:1266] Canceling Order - request_id: 5, login_id: MOCK_DEMO, fund_account: MOCK_FUND, orig_order_id: 100002, orig_batch_id: 0, market: 2
+[2026-11-17 04:35:15.619467] [info] [trade] [509] [mock_trade_handler.cpp:205] MOCK cancelled order 100002: released remaining cash / shares
+[2026-11-17 04:35:15.843558] [info] [quote] [521] [mock_quote_parser.cpp:31] MOCK quote 600000: last=10.42, bid=10.41, ask=10.43, sequence=842
+[2026-11-17 04:35:15.843665] [info] [quote] [521] [mock_quote_parser.cpp:31] MOCK quote 000001: last=15.42, bid=15.41, ask=15.43, sequence=842
+[2026-11-17 04:35:18.849971] [info] [quote] [521] [mock_quote_parser.cpp:31] MOCK quote 600000: last=10.11, bid=10.10, ask=10.12, sequence=811
+[2026-11-17 04:35:18.850003] [info] [quote] [521] [mock_quote_parser.cpp:31] MOCK quote 000001: last=15.11, bid=15.10, ask=15.12, sequence=811
+[2026-11-17 04:35:19.284401] [info] [network] [34] [main.cpp:42] Received signal 15, shutting down all services...
+[2026-11-17 04:35:19.341062] [info] [network] [34] [main.cpp:490] Shutting down all services...
+[2026-11-17 04:35:19.341085] [info] [network] [34] [main.cpp:495] Stopping auto scheduler...
+[2026-11-17 04:35:19.341122] [info] [scheduler] [34] [cron_scheduler.cpp:142] Removed cron job 'auto_start_0' (ID: 2)
+[2026-11-17 04:35:19.341125] [info] [scheduler] [34] [cron_scheduler.cpp:142] Removed cron job 'auto_stop_0' (ID: 3)
+[2026-11-17 04:35:19.341128] [info] [server] [34] [auto_scheduler.cpp:126] AutoScheduler stopped
+[2026-11-17 04:35:19.341130] [info] [server] [34] [auto_scheduler.cpp:25] AutoScheduler destructed
+[2026-11-17 04:35:19.341133] [info] [network] [34] [main.cpp:498] Auto scheduler stopped
+[2026-11-17 04:35:19.341134] [info] [network] [34] [main.cpp:504] Stopping network service...
+[2026-11-17 04:35:19.341136] [info] [network] [34] [network_service.cpp:120] Stopping network service...
+[2026-11-17 04:35:19.341416] [info] [network] [34] [network_service.cpp:134] Network service stopped
+[2026-11-17 04:35:19.341597] [info] [network] [34] [main.cpp:507] Network service stopped
+[2026-11-17 04:35:19.341610] [info] [network] [34] [trade_api_handler.cpp:242] Stopping TWAP algorithm...
+[2026-11-17 04:35:19.341612] [info] [server] [34] [twap.cpp:181] Stopping TwapAlgorithm...
+[2026-11-17 04:35:19.341728] [info] [server] [518] [twap.cpp:592] TWAP execution thread stopped
+[2026-11-17 04:35:19.341741] [info] [server] [519] [twap.cpp:630] TWAP cleanup thread stopped
+[2026-11-17 04:35:19.341843] [info] [server] [34] [twap.cpp:205] TwapAlgorithm stopped successfully
+[2026-11-17 04:35:19.341854] [info] [network] [34] [trade_api_handler.cpp:244] TWAP algorithm stopped
+[2026-11-17 04:35:19.342020] [info] [server] [34] [twap.cpp:233] TwapAlgorithm released successfully
+[2026-11-17 04:35:19.342036] [info] [network] [34] [trade_api_handler.cpp:250] TWAP algorithm cleaned up
+[2026-11-17 04:35:19.342040] [info] [network] [34] [main.cpp:513] TradeApiHandler instance reference cleared
+[2026-11-17 04:35:19.342041] [info] [network] [34] [main.cpp:517] Stopping strategy service...
+[2026-11-17 04:35:19.342181] [info] [strategy] [34] [strategy_adapter.cpp:492] Strategy instance stopped successfully: paper_stop_001
+[2026-11-17 04:35:19.342194] [info] [strategy] [34] [strategy_adapter.cpp:601] Stopped 1 strategy instances
+[2026-11-17 04:35:19.342198] [info] [strategy] [34] [strategy_adapter.cpp:130] StrategyAdapter stopped successfully
+[2026-11-17 04:35:19.342366] [info] [strategy] [34] [strategy_service.cpp:1044] All callbacks cleared
+[2026-11-17 04:35:19.342375] [info] [strategy] [34] [strategy_service.cpp:191] StrategyService stopped successfully (can be restarted)
+[2026-11-17 04:35:19.342379] [info] [strategy] [34] [strategy_service.cpp:1044] All callbacks cleared
+[2026-11-17 04:35:19.342406] [info] [strategy] [34] [strategy_adapter.cpp:610] Destroying 1 strategy instances...
+[2026-11-17 04:35:19.342418] [info] [strategy] [34] [strategy_adapter.cpp:625] All thread pool tasks completed
+[2026-11-17 04:35:19.342432] [info] [strategy] [34] [strategy_adapter.cpp:957] Destroying strategy instance: paper_stop_001
+[2026-11-17 04:35:19.342622] [info] [strategy] [34] [strategy_adapter.cpp:975] Strategy instance destroyed successfully: paper_stop_001
+[2026-11-17 04:35:19.342667] [info] [strategy] [34] [strategy_adapter.cpp:651] Destroyed 1 strategy instances successfully
+[2026-11-17 04:35:19.342943] [info] [strategy] [34] [strategy_adapter.cpp:175] StrategyAdapter released successfully
+[2026-11-17 04:35:19.342980] [info] [strategy] [34] [strategy_adapter.cpp:175] StrategyAdapter released successfully
+[2026-11-17 04:35:19.342982] [info] [strategy] [34] [strategy_adapter.cpp:28] StrategyAdapter destroyed
+[2026-11-17 04:35:19.343012] [info] [strategy] [34] [strategy_service.cpp:232] StrategyService released successfully
+[2026-11-17 04:35:19.343019] [info] [strategy] [34] [strategy_service.cpp:1044] All callbacks cleared
+[2026-11-17 04:35:19.343026] [info] [strategy] [34] [strategy_service.cpp:232] StrategyService released successfully
+[2026-11-17 04:35:19.343028] [info] [strategy] [34] [strategy_service.cpp:36] StrategyService destroyed
+[2026-11-17 04:35:19.343046] [info] [network] [34] [main.cpp:520] Strategy service stopped
+[2026-11-17 04:35:19.343048] [info] [network] [34] [main.cpp:522] Stopping trade service...
+[2026-11-17 04:35:19.343074] [info] [trade] [34] [base_trade_handler.cpp:2570] Cleared login status for 1 accounts
+[2026-11-17 04:35:19.343084] [info] [trade] [34] [base_trade_handler.cpp:2570] Cleared login status for 0 accounts
+[2026-11-17 04:35:19.343101] [info] [trade] [34] [trade_handler_adapter.cpp:166] Trade handler mock_trading stopped successfully
+[2026-11-17 04:35:19.343111] [info] [trade] [34] [trade_service.cpp:139] TradeService stopped
+[Logger] Reset to internal logger state
+[2026-11-17 04:35:19.343319] [info] [trade] [34] [trade_handler_adapter.cpp:368] Trade handler instance destroyed for mock_trading
+[2026-11-17 04:35:19.343933] [info] [trade] [34] [trade_handler_adapter.cpp:275] Trade handler library unloaded for mock_trading
+[2026-11-17 04:35:19.343942] [info] [trade] [34] [trade_handler_adapter.cpp:210] Trade handler mock_trading released
+[2026-11-17 04:35:19.343951] [info] [trade] [34] [trade_handler_adapter.cpp:210] Trade handler mock_trading released
+[2026-11-17 04:35:19.343967] [info] [trade] [34] [trade_service.cpp:171] TradeService release completed
+[2026-11-17 04:35:19.343974] [info] [trade] [34] [trade_service.cpp:171] TradeService release completed
+[2026-11-17 04:35:19.343975] [info] [trade] [34] [trade_service.cpp:20] TradeService destroyed
+[2026-11-17 04:35:19.343977] [info] [network] [34] [main.cpp:525] Trade service stopped
+[2026-11-17 04:35:19.343977] [info] [network] [34] [main.cpp:527] Stopping quote service...
+[2026-11-17 04:35:19.344837] [info] [quote] [522] [base_quote_parser.cpp:1850] Typed mock replay loop finished
+[2026-11-17 04:35:19.344897] [info] [quote] [34] [base_quote_parser.cpp:425] Mock replay stopped
+[2026-11-17 04:35:19.344907] [info] [quote] [34] [base_quote_parser.cpp:315] QuoteParser stopped
+[2026-11-17 04:35:19.344911] [info] [quote] [34] [quote_parser_adapter.cpp:156] Parser mock_quotes stopped successfully (can be restarted)
+[2026-11-17 04:35:19.344913] [info] [quote] [34] [quote_service.cpp:139] QuoteService stopped
+[Logger] Reset to internal logger state
+[2026-11-17 04:35:19.446685] [info] [quote] [34] [quote_parser_adapter.cpp:356] Parser instance destroyed for mock_quotes
+[2026-11-17 04:35:19.447643] [info] [quote] [34] [quote_parser_adapter.cpp:239] Parser library unloaded for mock_quotes
+[2026-11-17 04:35:19.447656] [info] [quote] [34] [quote_parser_adapter.cpp:179] Parser mock_quotes released
+[2026-11-17 04:35:19.447670] [info] [quote] [34] [quote_parser_adapter.cpp:179] Parser mock_quotes released
+[2026-11-17 04:35:19.447694] [info] [quote] [34] [quote_service.cpp:168] QuoteService release completed
+[2026-11-17 04:35:19.447708] [info] [quote] [34] [quote_service.cpp:168] QuoteService release completed
+[2026-11-17 04:35:19.447709] [info] [quote] [34] [quote_service.cpp:18] QuoteService destroyed
+[2026-11-17 04:35:19.447711] [info] [network] [34] [main.cpp:530] Quote service stopped
+[2026-11-17 04:35:19.447712] [info] [network] [34] [main.cpp:535] Stopping database service...
+[2026-11-17 04:35:19.453730] [info] [server] [34] [database_manager.cpp:166] Database closed successfully
+[2026-11-17 04:35:19.453752] [info] [network] [34] [main.cpp:538] Database service stopped
+[2026-11-17 04:35:19.453755] [info] [network] [34] [main.cpp:544] Stopping cron scheduler...
+[2026-11-17 04:35:19.453756] [info] [scheduler] [34] [cron_scheduler.cpp:61] Stopping CronScheduler...
+[2026-11-17 04:35:19.453817] [info] [scheduler] [513] [cron_scheduler.cpp:43] CronScheduler worker thread stopped
+[2026-11-17 04:35:19.453922] [info] [scheduler] [34] [cron_scheduler.cpp:84] CronScheduler stopped
+[2026-11-17 04:35:19.453951] [info] [network] [34] [main.cpp:547] Cron scheduler stopped
+[2026-11-17 04:35:19.453954] [info] [network] [34] [main.cpp:553] Cleaning up trading time manager...
+[2026-11-17 04:35:19.453958] [info] [network] [34] [main.cpp:555] Trading time manager cleaned up
+[2026-11-17 04:35:19.453959] [info] [network] [34] [main.cpp:558] All services shut down successfully
+[2026-11-17 04:35:19.453987] [info] [network] [34] [main.cpp:843] FT Trading Network API Server shut down successfully

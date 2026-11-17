@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # 生产部署选项 - Release 模式默认启用生产配置
+option(BUILD_VENDOR_ADAPTERS "Build ATP and KSQMD adapters (requires vendor SDKs)" ON)
+
 option(BUILD_PRODUCTION "Build for production deployment with embedded dependencies" OFF)
 option(ENABLE_STATIC_LINKING "Enable static linking of third-party dependencies" OFF)
 
@@ -356,6 +358,13 @@ add_subdirectory(src/strategy)
 add_subdirectory(src/database)
 add_subdirectory(src/network)
 
+option(BUILD_MOCK_EXAMPLES "Build SDK-free example plugins" OFF)
+if(BUILD_MOCK_EXAMPLES)
+    add_subdirectory(examples/mock_core)
+    add_subdirectory(examples/cpp_native)
+    add_subdirectory(examples/python_c_api)
+endif()
+
 # 添加主程序（最后添加，因为它依赖其他所有模块）
 add_subdirectory(src)
 
@@ -427,4 +436,33 @@ if(BUILD_PRODUCTION)
     message(STATUS "  ✓ 符号可见性优化")
     message(STATUS "  ✓ LTO 优化 (Link Time Optimization)")
     message(STATUS "  ✓ 自包含部署包")
+endif()
+# Optional SDK-free plugin integration checks.
+option(BUILD_MOCK_TESTS "Build the mock plugin integration test" OFF)
+if(BUILD_MOCK_TESTS)
+    if(NOT BUILD_MOCK_EXAMPLES)
+        message(FATAL_ERROR "BUILD_MOCK_TESTS requires BUILD_MOCK_EXAMPLES=ON")
+    endif()
+    enable_testing()
+    add_executable(mock_plugin_test examples/mock_core/tests/mock_plugin_test.cpp)
+    target_link_libraries(mock_plugin_test PRIVATE ft_mock_quote_parser ft_mock_trade_handler SQLiteCpp)
+    setup_target_compile_options(mock_plugin_test)
+    add_test(NAME mock_plugins COMMAND mock_plugin_test)
+    set_tests_properties(mock_plugins PROPERTIES TIMEOUT 15)
+    find_package(Python3 REQUIRED COMPONENTS Interpreter)
+    file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/cpp-native-test")
+    add_test(NAME cpp_native_calls COMMAND cpp_native_example "${CMAKE_SOURCE_DIR}/examples/mock_core")
+    add_test(NAME python_c_api_calls COMMAND "${Python3_EXECUTABLE}"
+        "${CMAKE_SOURCE_DIR}/examples/python_c_api/demo.py"
+        --library-dir "$<TARGET_FILE_DIR:trade_service>"
+        --output "${CMAKE_BINARY_DIR}/python-c-api-test/report.json")
+    add_test(NAME mock_backend_logging COMMAND "${Python3_EXECUTABLE}"
+        "${CMAKE_SOURCE_DIR}/examples/mock_core/tests/backend_smoke.py"
+        "$<TARGET_FILE:ft_trading_client>" "${CMAKE_SOURCE_DIR}/examples/mock_core")
+    set_tests_properties(mock_backend_logging PROPERTIES TIMEOUT 20
+        ENVIRONMENT "LD_LIBRARY_PATH=$<TARGET_FILE_DIR:trade_service>")
+    set_tests_properties(cpp_native_calls python_c_api_calls PROPERTIES
+        TIMEOUT 15
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/cpp-native-test"
+        ENVIRONMENT "LD_LIBRARY_PATH=$<TARGET_FILE_DIR:trade_service>")
 endif()

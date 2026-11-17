@@ -2,9 +2,13 @@
 
 推荐先用 Docker 编译和运行，再根据需要修改代码。这样不用在自己的电脑上逐个安装编译工具和依赖，环境也更容易保持一致。
 
+## 运行示例
+
+[使用示例](MOCK_DEMO.md)分别介绍 C++ 直接调用、Python C 接口和 Web HTTP 三种用法；[English](MOCK_DEMO.en.md)。
+
 ## 准备服务商 SDK
 
-完整系统依赖 ATP 交易 SDK 和 KSQMD 行情 SDK。仓库不附带服务商的头文件、动态库、公钥或授权文件；编译前请向对应服务商获取与现有适配代码兼容的 Linux x86_64 版本。
+默认构建启用 ATP 交易接入和 KSQMD 行情接入，因此依赖对应服务商 SDK。使用 `-DBUILD_VENDOR_ADAPTERS=OFF` 可仅构建核心服务与 mock 插件。仓库不附带服务商的头文件、动态库、公钥或授权文件；编译前请向对应服务商获取与现有适配代码兼容的 Linux x86_64 版本。
 
 文件清单与放置路径分别见 [ATP SDK 说明](../lib/atp/README.md)和 [KSQMD SDK 说明](../lib/ksqmd/README.md)。这些本地文件已由 Git 忽略，不要强制加入提交。未准备 SDK 时，完整系统构建会提示缺少依赖。
 
@@ -122,7 +126,7 @@ curl http://127.0.0.1:8080/health
 | 修改 HTTP 接口 | `src/network/handler/http/` |
 | 修改 TWAP 拆单 | `src/algorithm/twap.cpp` |
 | 修改数据库读写 | `src/database/` |
-| 修改 Python 客户端 | `examples/client_test/apis.py` |
+| 修改 Python 客户端 | `examples/python_c_api/client.py` |
 
 ### 添加自己的策略
 

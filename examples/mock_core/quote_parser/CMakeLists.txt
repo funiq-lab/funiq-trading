@@ -1,0 +1,3 @@
+add_library(ft_mock_quote_parser SHARED mock_quote_parser.cpp)
+target_link_libraries(ft_mock_quote_parser PRIVATE ft_base_quote_parser)
+setup_target_compile_options(ft_mock_quote_parser)
